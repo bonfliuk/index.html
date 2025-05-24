@@ -503,14 +503,13 @@
 
         .product-entry {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr; /* Give more space to content */
-            gap: 40px; /* Adjusted gap */
-            align-items: start; /* Align items to the start of their grid cell */
+            grid-template-columns: 1fr 1fr; 
+            gap: 40px; /* Reduced gap slightly */
             margin-bottom: 100px; 
             opacity: 0; 
             border: 1px solid var(--border-dark); 
             border-radius: 16px;
-            padding: 35px; /* Adjusted padding */
+            padding: 30px; /* Reduced padding */
             background: var(--bg-dark-card);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
@@ -521,10 +520,18 @@
         .product-entry.visible.slide-left { animation: slideInFromLeftDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; } 
         .product-entry.visible.slide-right { animation: slideInFromRightDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 
-        .product-entry:nth-child(even) { /* Swap columns for even items */
-            grid-template-columns: 0.8fr 1.2fr;
+
+        .product-content-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Helps push CTA down if content is short */
         }
-         .product-entry:nth-child(even) .product-content-column {
+        .product-gallery-column {
+             display: flex;
+             flex-direction: column;
+             align-items: center; /* Center gallery items if column is wider */
+        }
+        .product-entry:nth-child(even) .product-content-column {
             order: 2;
         }
         .product-entry:nth-child(even) .product-gallery-column {
@@ -532,19 +539,9 @@
         }
 
 
-        .product-content-column {
-            display: flex;
-            flex-direction: column;
-        }
-        .product-gallery-column {
-             display: flex;
-             flex-direction: column;
-        }
-       
-
         .product-header-area {
             text-align: left; 
-            margin-bottom: 30px; /* Reduced margin */
+            margin-bottom: 30px;
             position: relative; 
         }
         .product-header-area .product-number {
@@ -552,7 +549,7 @@
             font-weight: 800;
             color: rgba(255, 255, 255, 0.03); 
             position: absolute;
-            top: -35px; 
+            top: -30px; 
             left: -10px; 
             transform: none;
             z-index: 0;
@@ -584,26 +581,24 @@
 
         .product-gallery-area {
             margin-bottom: 0; 
-            border-radius: 10px; /* Slightly less rounded */
+            border-radius: 12px;
             overflow: hidden;
-            background: rgba(var(--bg-dark-rgb, 10, 10, 20), 0.3); /* Using bg-dark with alpha */
-            padding: 15px; /* Reduced padding */
-            border: 1px solid rgba(255,255,255,0.06);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
-            height: 100%; 
-            display: flex;
-            flex-direction: column;
+            background: rgba(var(--accent-blue-primary-rgb), 0.05); /* Subtle accent background */
+            padding: 20px;
+            border: 1px solid rgba(var(--accent-blue-primary-rgb),0.15);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.25);
+            width: 100%; /* Ensure it takes column width */
         }
         .product-main-image-display { 
             width: 100%;
-            height: 350px; /* Adjusted height */
-            margin-bottom: 15px; /* Space to thumbnails */
-            border-radius: 8px; /* Consistent rounding */
+            height: 380px; /* Adjusted height */
+            margin-bottom: 15px;
+            border-radius: 8px; /* Softer radius */
             overflow: hidden;
             background: var(--bg-dark); 
             position: relative; 
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.3); 
-            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2); 
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
          .product-main-image-display:hover {
             transform: scale(1.02); 
@@ -612,7 +607,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(10,10,20,0) 65%, rgba(10,10,20,0.25) 100%);
+            background: linear-gradient(180deg, rgba(10,10,20,0) 60%, rgba(10,10,20,0.2) 100%);
             z-index: 1;
             pointer-events: none;
             border-radius: 8px;
@@ -622,7 +617,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain; 
-            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; 
+            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out; /* Slightly faster transition */
             border-radius: 8px; 
             transform: scale(1);
             opacity: 1; 
@@ -639,21 +634,24 @@
 
         .product-thumbnail-selector { 
             display: flex; 
+            justify-content: center; 
             gap: 10px; 
             overflow-x: auto; 
-            padding-bottom: 10px; 
+            padding: 10px 5px; /* Padding for scrollbar visibility and aesthetics */
             white-space: nowrap; 
         }
         .product-thumbnail-selector::-webkit-scrollbar {
-            height: 5px; /* Thinner scrollbar */
+            height: 8px; /* Slightly thicker scrollbar */
         }
         .product-thumbnail-selector::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.03);
-            border-radius: 3px;
+            background: rgba(255,255,255,0.03); /* More subtle track */
+            border-radius: 4px;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb {
             background: var(--accent-blue-secondary);
-            border-radius: 3px;
+            border-radius: 4px;
+            border: 2px solid transparent; /* Creates padding around thumb */
+            background-clip: content-box;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb:hover {
             background: var(--accent-blue-primary);
@@ -668,7 +666,7 @@
             cursor: pointer;
             border: 2px solid transparent;
             transition: border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
-            opacity: 0.6; 
+            opacity: 0.55; 
             flex-shrink: 0; 
         }
         .thumbnail:hover {
@@ -862,37 +860,22 @@
             .hero-subtitle { font-size: clamp(1rem, 3.5vw, 1.2rem); }
 
             .product-entry { 
-                grid-template-columns: 1fr; /* Stack columns on mobile */
-                padding: 25px; 
+                grid-template-columns: 1fr; 
+                padding: 20px; 
                 margin-bottom: 60px; 
             }
             .product-entry:nth-child(even) .product-content-column,
             .product-entry:nth-child(even) .product-gallery-column {
-                order: initial; /* Reset order for stacking */
+                order: initial; 
             }
             .product-gallery-column { margin-top: 30px; } 
 
             .product-header-area .product-title { font-size: clamp(1.5rem, 5vw, 2rem); }
             .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
             .product-header-area .product-description { font-size: 0.9rem; }
-            
-            .product-main-image-display { 
-                height: auto; 
-                padding-bottom: 65%; /* Adjust aspect ratio for main image on mobile */
-                position: relative; 
-            }
-            .product-main-image-display .main-image-active {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-            .product-thumbnail-selector { 
-                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* More adaptive thumbnails on mobile */
-                gap: 8px; 
-            } 
-            .thumbnail { height: 50px; width: auto; } 
+            .product-main-image-display { height: 280px; } 
+            .product-thumbnail-selector { grid-template-columns: repeat(3, 1fr); gap: 10px;} 
+            .thumbnail { height: 60px; } 
             .product-details-area { grid-template-columns: 1fr; } 
 
 
@@ -1093,7 +1076,7 @@
             </div>
 
             <div class="product-entry"> 
-                <div class="product-content-column">
+                 <div class="product-content-column">
                     <div class="product-header-area">
                         <span class="product-number">02</span>
                         <h3 class="product-title">FAST SIZE CHANGE (FSC)</h3>
@@ -1102,7 +1085,7 @@
                             Il sistema FSC rivoluziona il cambio formato, eliminando i tempi morti. Un singolo operatore gestisce il tutto in modo rapido, preciso e sicuro, massimizzando la produttività.
                         </p>
                     </div>
-                     <div class="product-details-area">
+                    <div class="product-details-area">
                         <ul class="product-features">
                             <li>Cambio formato record, zero fermi.</li>
                             <li>Gestione intuitiva, un operatore.</li>
@@ -1287,10 +1270,19 @@
                         if(entry.target.classList.contains('product-entry')) { 
                             const productEntries = Array.from(entry.target.parentNode.querySelectorAll('.product-entry'));
                             const index = productEntries.indexOf(entry.target);
-                            const isEven = index % 2 !== 0; 
-                            if (isEven && window.innerWidth > 768) { 
-                                entry.target.classList.add('slide-right');
-                            } else {
+                            // For alternating slide-in, apply to the .product-entry itself based on its index among siblings
+                            // This logic ensures correct alternation even if other elements are children of product-showcase
+                            const productEntryElements = Array.from(entry.target.parentElement.querySelectorAll('.product-entry'));
+                            const entryIndex = productEntryElements.indexOf(entry.target);
+                            const isEvenIndexed = entryIndex % 2 === 0; // 0th is first (odd visually), 1st is second (even visually) etc.
+
+                            if (window.innerWidth > 768) { // Only apply alternating on desktop
+                                if (isEvenIndexed) {
+                                    entry.target.classList.add('slide-left');
+                                } else {
+                                    entry.target.classList.add('slide-right');
+                                }
+                            } else { // On mobile, all slide from left
                                 entry.target.classList.add('slide-left');
                             }
                         }
@@ -1339,7 +1331,9 @@
                     if (mainImageElement && mainImageElement.getAttribute('src') !== newImageSrc) {
                         mainImageElement.classList.add('image-swapping');
 
+                        // Remove active class from all thumbnails within the same gallery
                         this.closest('.product-thumbnail-selector').querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                        // Add active class to the clicked thumbnail
                         this.classList.add('active');
 
                         setTimeout(() => {
@@ -1348,8 +1342,9 @@
                                 this.onerror=null;
                                 this.src='https://placehold.co/800x450/10131f/e5e7eb?text=Immagine+non+caricata';
                             };
-                            mainImageElement.classList.remove('image-swapping');
-                        }, 250); 
+                            // Delay removing the class to allow fade-in of new image
+                            setTimeout(() => mainImageElement.classList.remove('image-swapping'), 50); 
+                        }, 200); // Must be less than opacity transition duration (0.4s or 0.45s)
                     } else if (mainImageElement && mainImageElement.getAttribute('src') === newImageSrc && !this.classList.contains('active')) {
                          this.closest('.product-thumbnail-selector').querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
                          this.classList.add('active');
