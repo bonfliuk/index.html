@@ -495,7 +495,7 @@
             line-height: 1.6;
         }
 
-        /* Products Section - New Structure */
+        /* Products Section - Enhanced Gallery */
         .products { 
             position: relative; 
             padding-bottom: 0; 
@@ -503,13 +503,14 @@
 
         .product-entry {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Default to two columns */
-            gap: 50px;
+            grid-template-columns: 1.2fr 0.8fr; /* Give more space to content */
+            gap: 40px; /* Adjusted gap */
+            align-items: start; /* Align items to the start of their grid cell */
             margin-bottom: 100px; 
             opacity: 0; 
             border: 1px solid var(--border-dark); 
             border-radius: 16px;
-            padding: 40px;
+            padding: 35px; /* Adjusted padding */
             background: var(--bg-dark-card);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
@@ -520,6 +521,17 @@
         .product-entry.visible.slide-left { animation: slideInFromLeftDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; } 
         .product-entry.visible.slide-right { animation: slideInFromRightDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 
+        .product-entry:nth-child(even) { /* Swap columns for even items */
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+         .product-entry:nth-child(even) .product-content-column {
+            order: 2;
+        }
+        .product-entry:nth-child(even) .product-gallery-column {
+            order: 1;
+        }
+
+
         .product-content-column {
             display: flex;
             flex-direction: column;
@@ -528,27 +540,20 @@
              display: flex;
              flex-direction: column;
         }
-        /* On even product entries, swap column order on desktop */
-        .product-entry:nth-child(even) .product-content-column {
-            order: 2;
-        }
-        .product-entry:nth-child(even) .product-gallery-column {
-            order: 1;
-        }
-
+       
 
         .product-header-area {
-            text-align: left; /* Align text to left in column */
-            margin-bottom: 30px;
+            text-align: left; 
+            margin-bottom: 30px; /* Reduced margin */
             position: relative; 
         }
         .product-header-area .product-number {
-            font-size: 4rem; /* Slightly smaller */
+            font-size: 4.5rem; 
             font-weight: 800;
             color: rgba(255, 255, 255, 0.03); 
             position: absolute;
-            top: -30px; 
-            left: -15px; /* Position to the left */
+            top: -35px; 
+            left: -10px; 
             transform: none;
             z-index: 0;
             user-select: none;
@@ -562,7 +567,7 @@
             position: relative; z-index: 1;
         }
         .product-header-area .product-subtitle {
-            font-size: clamp(1rem, 2vw, 1.2rem); 
+            font-size: clamp(1rem, 2.2vw, 1.25rem); 
             color: var(--text-accent-dark);
             margin-bottom: 15px;
             font-weight: 500;
@@ -572,45 +577,42 @@
             font-size: 0.95rem; 
             color: var(--text-secondary-dark);
             line-height: 1.7;
-            /* max-width: 700px; Remove max-width for column layout */
-            /* margin: 0 auto 20px auto; Remove auto margin */
             margin-bottom: 20px;
             position: relative; z-index: 1;
         }
 
 
         .product-gallery-area {
-            margin-bottom: 0; /* Remove bottom margin as it's in a column */
-            border-radius: 12px;
+            margin-bottom: 0; 
+            border-radius: 10px; /* Slightly less rounded */
             overflow: hidden;
-            background: rgba(20, 23, 35, 0.5); /* Slightly more subtle gallery bg */
-            padding: 15px;
+            background: rgba(var(--bg-dark-rgb, 10, 10, 20), 0.3); /* Using bg-dark with alpha */
+            padding: 15px; /* Reduced padding */
             border: 1px solid rgba(255,255,255,0.06);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-            height: 100%; /* Make gallery area fill column height */
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+            height: 100%; 
             display: flex;
             flex-direction: column;
         }
         .product-main-image-display { 
             width: 100%;
-            flex-grow: 1; /* Allow main image to take available space */
-            min-height: 300px; /* Minimum height */
-            margin-bottom: 15px;
-            border-radius: 8px;
+            height: 350px; /* Adjusted height */
+            margin-bottom: 15px; /* Space to thumbnails */
+            border-radius: 8px; /* Consistent rounding */
             overflow: hidden;
             background: var(--bg-dark); 
             position: relative; 
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.2); 
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.3); 
             transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
         }
          .product-main-image-display:hover {
-            transform: scale(1.015); 
+            transform: scale(1.02); 
         }
          .product-main-image-display::before { 
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(10,10,20,0) 70%, rgba(10,10,20,0.2) 100%);
+            background: linear-gradient(180deg, rgba(10,10,20,0) 65%, rgba(10,10,20,0.25) 100%);
             z-index: 1;
             pointer-events: none;
             border-radius: 8px;
@@ -623,31 +625,30 @@
             transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; 
             border-radius: 8px; 
             transform: scale(1);
-            opacity: 1; /* Full opacity by default */
+            opacity: 1; 
         }
         .product-main-image-display:hover .main-image-active {
-             transform: scale(1.02); 
+             transform: scale(1.03); 
         }
         
         .main-image-active.image-swapping { 
             opacity: 0;
-            transform: scale(0.97); 
+            transform: scale(0.96); 
         }
 
 
         .product-thumbnail-selector { 
             display: flex; 
             gap: 10px; 
-            overflow-x: auto; /* Enable horizontal scroll */
-            padding-bottom: 10px; /* Space for scrollbar */
-            white-space: nowrap; /* Keep items in one line */
+            overflow-x: auto; 
+            padding-bottom: 10px; 
+            white-space: nowrap; 
         }
-        /* Custom scrollbar for thumbnail gallery */
         .product-thumbnail-selector::-webkit-scrollbar {
-            height: 6px;
+            height: 5px; /* Thinner scrollbar */
         }
         .product-thumbnail-selector::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
             border-radius: 3px;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb {
@@ -660,37 +661,37 @@
 
 
         .thumbnail { 
-            width: 80px; 
-            height: 60px; 
+            width: 85px; 
+            height: 65px; 
             object-fit: cover;
             border-radius: 6px; 
             cursor: pointer;
             border: 2px solid transparent;
             transition: border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
-            opacity: 0.65; 
-            flex-shrink: 0; /* Prevent thumbnails from shrinking */
+            opacity: 0.6; 
+            flex-shrink: 0; 
         }
         .thumbnail:hover {
             opacity: 1;
-            transform: scale(1.08); 
+            transform: scale(1.1); 
             border-color: var(--accent-blue-secondary);
-            box-shadow: 0 0 12px rgba(var(--accent-blue-secondary-rgb), 0.5);
+            box-shadow: 0 0 12px rgba(var(--accent-blue-secondary-rgb), 0.6);
         }
         .thumbnail.active {
             border-color: var(--accent-blue-primary);
             opacity: 1;
-            transform: scale(1.1); 
-            box-shadow: 0 0 18px rgba(var(--accent-blue-primary-rgb), 0.6);
+            transform: scale(1.12); 
+            box-shadow: 0 0 18px rgba(var(--accent-blue-primary-rgb), 0.7);
         }
         
         .product-details-area {
-            display: flex; /* Use flex for better control within the column */
+            display: flex; 
             flex-direction: column;
-            justify-content: space-between; /* Pushes CTA to bottom if space allows */
+            justify-content: space-between; 
             height: 100%;
         }
 
-        .product-features { list-style: none; margin-bottom: 20px; } /* Adjusted margin */
+        .product-features { list-style: none; margin-bottom: 20px; } 
         .product-features li {
             color: var(--text-secondary-dark);
             margin-bottom: 10px;
@@ -715,7 +716,7 @@
 
 
         .product-specs-container { 
-            margin-top: auto; /* Pushes this block down if .product-details-area is flex */
+            margin-top: auto; 
         }
 
         .product-specs { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 25px; } 
@@ -869,14 +870,29 @@
             .product-entry:nth-child(even) .product-gallery-column {
                 order: initial; /* Reset order for stacking */
             }
-            .product-gallery-column { margin-top: 30px; } /* Add space between content and gallery on mobile */
+            .product-gallery-column { margin-top: 30px; } 
 
             .product-header-area .product-title { font-size: clamp(1.5rem, 5vw, 2rem); }
             .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
             .product-header-area .product-description { font-size: 0.9rem; }
-            .product-main-image-display { height: 250px; } 
-            .product-thumbnail-selector { grid-template-columns: repeat(3, 1fr); gap: 10px;} 
-            .thumbnail { height: 60px; } 
+            
+            .product-main-image-display { 
+                height: auto; 
+                padding-bottom: 65%; /* Adjust aspect ratio for main image on mobile */
+                position: relative; 
+            }
+            .product-main-image-display .main-image-active {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .product-thumbnail-selector { 
+                grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* More adaptive thumbnails on mobile */
+                gap: 8px; 
+            } 
+            .thumbnail { height: 50px; width: auto; } 
             .product-details-area { grid-template-columns: 1fr; } 
 
 
@@ -1077,7 +1093,7 @@
             </div>
 
             <div class="product-entry"> 
-                 <div class="product-content-column">
+                <div class="product-content-column">
                     <div class="product-header-area">
                         <span class="product-number">02</span>
                         <h3 class="product-title">FAST SIZE CHANGE (FSC)</h3>
@@ -1086,7 +1102,7 @@
                             Il sistema FSC rivoluziona il cambio formato, eliminando i tempi morti. Un singolo operatore gestisce il tutto in modo rapido, preciso e sicuro, massimizzando la produttività.
                         </p>
                     </div>
-                    <div class="product-details-area">
+                     <div class="product-details-area">
                         <ul class="product-features">
                             <li>Cambio formato record, zero fermi.</li>
                             <li>Gestione intuitiva, un operatore.</li>
