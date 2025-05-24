@@ -41,6 +41,9 @@
             overflow-x: hidden;
             line-height: 1.7; 
         }
+        body.menu-open {
+            overflow: hidden; /* Prevent scrolling when mobile menu is open */
+        }
 
         /* Animated Background - Aurora + Grid */
         .bg-animation {
@@ -154,6 +157,7 @@
             color: var(--text-primary-dark);
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
+            z-index: 1002; /* Ensure logo is above mobile menu overlay initially */
         }
         
         .logo:hover {
@@ -198,6 +202,86 @@
         .nav-links a:hover::before {
             transform: scaleX(1);
         }
+
+        /* Mobile Menu Styles */
+        #mobile-menu-toggle {
+            display: none; /* Hidden by default */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1005; /* Above overlay content, below close button if any */
+            position: absolute; /* Position relative to nav-container */
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #mobile-menu-toggle .hamburger-icon span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-primary-dark);
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+            border-radius: 3px;
+        }
+
+        /* Hamburger animation to X */
+        #mobile-menu-toggle.active .hamburger-icon span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        #mobile-menu-toggle.active .hamburger-icon span:nth-child(2) {
+            opacity: 0;
+        }
+        #mobile-menu-toggle.active .hamburger-icon span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+
+        #mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 20, 0.98); /* Dark overlay */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001; /* Below toggle button, above page content */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #mobile-menu.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        #mobile-menu li {
+            margin: 25px 0;
+        }
+        #mobile-menu a {
+            color: var(--text-primary-dark);
+            font-size: 1.5rem; /* Larger font for mobile menu */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            padding: 10px 20px;
+        }
+        #mobile-menu a:hover {
+            color: var(--accent-blue-primary);
+        }
+
 
         /* Hero Section */
         .hero {
@@ -504,12 +588,12 @@
         .product-entry {
             display: grid;
             grid-template-columns: 1fr 1fr; 
-            gap: 40px; /* Reduced gap slightly */
+            gap: 40px; 
             margin-bottom: 100px; 
             opacity: 0; 
             border: 1px solid var(--border-dark); 
             border-radius: 16px;
-            padding: 30px; /* Reduced padding */
+            padding: 30px; 
             background: var(--bg-dark-card);
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
@@ -524,12 +608,12 @@
         .product-content-column {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Helps push CTA down if content is short */
+            justify-content: space-between; 
         }
         .product-gallery-column {
              display: flex;
              flex-direction: column;
-             align-items: center; /* Center gallery items if column is wider */
+             align-items: center; 
         }
         .product-entry:nth-child(even) .product-content-column {
             order: 2;
@@ -583,17 +667,17 @@
             margin-bottom: 0; 
             border-radius: 12px;
             overflow: hidden;
-            background: rgba(var(--accent-blue-primary-rgb), 0.05); /* Subtle accent background */
+            background: rgba(var(--accent-blue-primary-rgb), 0.05); 
             padding: 20px;
             border: 1px solid rgba(var(--accent-blue-primary-rgb),0.15);
             box-shadow: inset 0 0 15px rgba(0,0,0,0.25);
-            width: 100%; /* Ensure it takes column width */
+            width: 100%; 
         }
         .product-main-image-display { 
             width: 100%;
-            height: 380px; /* Adjusted height */
+            height: 380px; 
             margin-bottom: 15px;
-            border-radius: 8px; /* Softer radius */
+            border-radius: 8px; 
             overflow: hidden;
             background: var(--bg-dark); 
             position: relative; 
@@ -617,7 +701,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain; 
-            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out; /* Slightly faster transition */
+            transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out; 
             border-radius: 8px; 
             transform: scale(1);
             opacity: 1; 
@@ -637,20 +721,20 @@
             justify-content: center; 
             gap: 10px; 
             overflow-x: auto; 
-            padding: 10px 5px; /* Padding for scrollbar visibility and aesthetics */
+            padding: 10px 5px; 
             white-space: nowrap; 
         }
         .product-thumbnail-selector::-webkit-scrollbar {
-            height: 8px; /* Slightly thicker scrollbar */
+            height: 8px; 
         }
         .product-thumbnail-selector::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.03); /* More subtle track */
+            background: rgba(255,255,255,0.03); 
             border-radius: 4px;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb {
             background: var(--accent-blue-secondary);
             border-radius: 4px;
-            border: 2px solid transparent; /* Creates padding around thumb */
+            border: 2px solid transparent; 
             background-clip: content-box;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb:hover {
@@ -846,14 +930,20 @@
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-links { display: none; }
+            #mobile-menu-toggle { display: block; } /* Show hamburger on mobile */
             .logo { 
-                position: static; 
+                /* Keep logo on the left on mobile if menu is on right */
+                left: 20px; 
+                /* If logo should be centered when no nav links: */
+                /* position: static; 
                 transform: none; 
-                margin: 0 auto; 
-                left: auto; 
-                top: auto;
+                margin: 0 auto;  */
             }
-            .nav-container { justify-content: center; }
+            /* If logo should be centered when hamburger is present: */
+            .nav-container { justify-content: space-between; padding: 0 20px; }
+            .logo { position: static; transform: none; margin-right: auto; /* Pushes logo left */ }
+            #mobile-menu-toggle { position: static; transform: none; /* Reset for flex layout */ }
+
 
             .hero { padding: 80px 20px 30px; }
             .hero-title { font-size: clamp(2.2rem, 10vw, 4.0rem); } 
@@ -916,8 +1006,25 @@
                 <li><a href="#products">PRODOTTI</a></li>
                 <li><a href="#contact">CONTATTI</a></li>
             </ul>
+            <button id="mobile-menu-toggle" aria-label="Menu" aria-expanded="false">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </div>
     </nav>
+    <div id="mobile-menu">
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#features">VANTAGGI</a></li>
+            <li><a href="#stats">I NOSTRI NUMERI</a></li>
+            <li><a href="#products">PRODOTTI</a></li>
+            <li><a href="#contact">CONTATTI</a></li>
+        </ul>
+    </div>
+
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -1242,11 +1349,35 @@
             }
 
             const navElement = document.querySelector('nav');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
             if (navElement) {
                 window.addEventListener('scroll', () => {
                     window.pageYOffset > 70 ? navElement.classList.add('scrolled') : navElement.classList.remove('scrolled');
                 }, { passive: true }); 
             }
+
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    const isExpanded = mobileMenu.classList.contains('open');
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                    mobileMenuToggle.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
+                });
+
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        mobileMenuToggle.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        document.body.classList.remove('menu-open');
+                    });
+                });
+            }
+
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1270,19 +1401,14 @@
                         if(entry.target.classList.contains('product-entry')) { 
                             const productEntries = Array.from(entry.target.parentNode.querySelectorAll('.product-entry'));
                             const index = productEntries.indexOf(entry.target);
-                            // For alternating slide-in, apply to the .product-entry itself based on its index among siblings
-                            // This logic ensures correct alternation even if other elements are children of product-showcase
-                            const productEntryElements = Array.from(entry.target.parentElement.querySelectorAll('.product-entry'));
-                            const entryIndex = productEntryElements.indexOf(entry.target);
-                            const isEvenIndexed = entryIndex % 2 === 0; // 0th is first (odd visually), 1st is second (even visually) etc.
-
-                            if (window.innerWidth > 768) { // Only apply alternating on desktop
-                                if (isEvenIndexed) {
-                                    entry.target.classList.add('slide-left');
-                                } else {
+                            const isEven = index % 2 !== 0; 
+                            if (window.innerWidth > 768) { 
+                                if (isEven) {
                                     entry.target.classList.add('slide-right');
+                                } else {
+                                    entry.target.classList.add('slide-left');
                                 }
-                            } else { // On mobile, all slide from left
+                            } else { 
                                 entry.target.classList.add('slide-left');
                             }
                         }
@@ -1331,9 +1457,7 @@
                     if (mainImageElement && mainImageElement.getAttribute('src') !== newImageSrc) {
                         mainImageElement.classList.add('image-swapping');
 
-                        // Remove active class from all thumbnails within the same gallery
                         this.closest('.product-thumbnail-selector').querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-                        // Add active class to the clicked thumbnail
                         this.classList.add('active');
 
                         setTimeout(() => {
@@ -1342,9 +1466,8 @@
                                 this.onerror=null;
                                 this.src='https://placehold.co/800x450/10131f/e5e7eb?text=Immagine+non+caricata';
                             };
-                            // Delay removing the class to allow fade-in of new image
                             setTimeout(() => mainImageElement.classList.remove('image-swapping'), 50); 
-                        }, 200); // Must be less than opacity transition duration (0.4s or 0.45s)
+                        }, 200); 
                     } else if (mainImageElement && mainImageElement.getAttribute('src') === newImageSrc && !this.classList.contains('active')) {
                          this.closest('.product-thumbnail-selector').querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
                          this.classList.add('active');
