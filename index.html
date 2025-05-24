@@ -608,11 +608,13 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between; 
+            min-width: 0; /* Helps prevent overflow with flex/grid children */
         }
         .product-gallery-column {
              display: flex;
              flex-direction: column;
              align-items: center; 
+             min-width: 0; /* Helps prevent overflow with flex/grid children */
         }
         .product-entry:nth-child(even) .product-content-column {
             order: 2;
@@ -645,7 +647,8 @@
             margin-bottom: 8px;
             color: var(--text-primary-dark);
             position: relative; z-index: 1;
-            word-break: break-word; /* Added for long titles */
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
         .product-header-area .product-subtitle {
             font-size: clamp(1rem, 2.2vw, 1.25rem); 
@@ -660,7 +663,8 @@
             line-height: 1.7;
             margin-bottom: 20px;
             position: relative; z-index: 1;
-            word-break: break-word; /* Added for long descriptions */
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
 
 
@@ -772,6 +776,7 @@
             flex-direction: column;
             justify-content: space-between; 
             height: 100%;
+            min-width: 0; /* Helps prevent overflow */
         }
 
         .product-features { list-style: none; margin-bottom: 20px; } 
@@ -782,7 +787,8 @@
             position: relative;
             transition: color 0.3s ease, transform 0.3s ease;
             font-size: 0.9rem;
-            word-break: break-word; /* Added */
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
         .product-features li::before {
             content: '›'; 
@@ -833,7 +839,8 @@
             color: var(--text-primary-dark); 
             margin-bottom: 5px; 
             font-size: 0.85rem; 
-            word-break: break-word; /* Added */
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
         .spec-list li::before { content: "▪"; color: var(--accent-blue-primary); margin-right: 6px; }
 
@@ -941,7 +948,7 @@
             .logo { 
                 left: 20px; 
             }
-            .nav-container { justify-content: space-between; padding: 0 20px; } /* Ensure space for hamburger */
+            .nav-container { justify-content: space-between; padding: 0 20px; } 
             .logo { position: static; transform: none; margin-right: auto; }
             #mobile-menu-toggle { position: static; transform: none; }
 
@@ -952,30 +959,36 @@
 
             .product-entry { 
                 grid-template-columns: 1fr; 
-                padding: 25px; /* Increased padding for mobile */
+                padding: 20px; /* Adjusted padding for mobile */
                 margin-bottom: 60px; 
             }
             .product-entry:nth-child(even) .product-content-column,
             .product-entry:nth-child(even) .product-gallery-column {
                 order: initial; 
             }
-            .product-gallery-column { margin-top: 40px; } /* Increased space */
+            .product-content-column, .product-gallery-column {
+                min-width: 0; /* Ensure columns can shrink */
+            }
+            .product-gallery-column { margin-top: 30px; } 
 
             .product-header-area .product-title { 
-                font-size: clamp(1.4rem, 4.8vw, 1.9rem); /* Adjusted for mobile */
-                word-break: break-word; /* Ensure long titles wrap */
+                font-size: clamp(1.4rem, 4.8vw, 1.9rem); 
+                word-break: break-word; 
+                overflow-wrap: break-word;
             }
             .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
             .product-header-area .product-description { 
                 font-size: 0.9rem; 
-                word-break: break-word; /* Ensure description wraps */
+                word-break: break-word; 
+                overflow-wrap: break-word;
             }
             .product-main-image-display { height: 280px; } 
             .product-thumbnail-selector { grid-template-columns: repeat(3, 1fr); gap: 10px;} 
             .thumbnail { height: 60px; } 
             .product-details-area { grid-template-columns: 1fr; } 
             .product-features li, .spec-list li {
-                 word-break: break-word; /* Ensure list items wrap */
+                 word-break: break-word; 
+                 overflow-wrap: break-word;
             }
 
 
