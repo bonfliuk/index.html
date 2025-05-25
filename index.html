@@ -768,6 +768,9 @@
             font-size: 0.9rem;
             word-break: break-word; 
             overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .product-features li::before {
             content: '›'; 
@@ -820,6 +823,9 @@
             font-size: 0.85rem; 
             word-break: break-word; 
             overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .spec-list li::before { content: "▪"; color: var(--accent-blue-primary); margin-right: 6px; }
 
@@ -966,9 +972,12 @@
                 margin-bottom: 60px; 
             }
             .product-header-area .product-title { 
-                font-size: clamp(1.4rem, 4.8vw, 1.9rem); 
+                font-size: clamp(1.4rem, 4.5vw, 1.8rem); /* Slightly smaller max for mobile */
                 word-break: break-word; 
                 overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
             .product-header-area .product-subtitle { 
                 font-size: clamp(1rem, 3vw, 1.1rem); 
@@ -979,12 +988,25 @@
                 font-size: 0.9rem; 
                 word-break: break-word; 
                 overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
             
             .product-details-area { grid-template-columns: 1fr; } 
             .product-features li, .spec-list li {
                  word-break: break-word; 
                  overflow-wrap: break-word;
+                 -webkit-hyphens: auto;
+                 -ms-hyphens: auto;
+                 hyphens: auto;
+            }
+            .product-variant-block h4, .product-variant-block p {
+                word-break: break-word; 
+                overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
 
 
