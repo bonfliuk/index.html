@@ -589,27 +589,39 @@
             }
         }
 
+        .product-intro-content {
+            min-width: 0; /* Prevent content from expanding parent */
+        }
+
         .product-intro-content .product-title {
             font-size: clamp(1.8rem, 4vw, 2.6rem);
             color: var(--accent-blue-primary);
             margin-bottom: 12px;
             font-weight: 700;
-            word-break: break-word; 
+            word-wrap: break-word;
             overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .product-intro-content .product-subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             color: var(--text-dark-secondary);
             margin-bottom: 18px;
             font-weight: 500;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         .product-intro-content .product-description {
             font-size: 1rem;
             color: var(--text-dark-secondary);
             line-height: 1.7;
             margin-bottom: 25px;
-            word-break: break-word; 
+            word-wrap: break-word;
             overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
 
         .product-intro-gallery-wrapper {
@@ -743,11 +755,21 @@
             color: var(--text-dark-primary);
             margin-bottom: 8px;
             font-weight: 600;
+            word-break: break-word; 
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .product-variant-block p { 
             font-size: 0.85rem;
             color: var(--text-dark-secondary);
             line-height: 1.6;
+            word-break: break-word; 
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         
         .product-details-area { 
@@ -972,7 +994,7 @@
                 margin-bottom: 60px; 
             }
             .product-header-area .product-title { 
-                font-size: clamp(1.4rem, 4.5vw, 1.8rem); 
+                font-size: clamp(1.4rem, 4.5vw, 1.8rem); /* Further reduced max size */
                 word-break: break-word; 
                 overflow-wrap: break-word;
                 -webkit-hyphens: auto;
@@ -983,6 +1005,9 @@
                 font-size: clamp(1rem, 3vw, 1.1rem); 
                 word-break: break-word; 
                 overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
             .product-header-area .product-description { 
                 font-size: 0.9rem; 
