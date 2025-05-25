@@ -96,7 +96,7 @@
         nav {
             position: fixed;
             width: 100%;
-            padding: 22px 40px; 
+            padding: 22px 40px; /* Increased vertical padding */
             z-index: 1000;
             background: rgba(255, 255, 255, 0.85); 
             backdrop-filter: blur(10px); 
@@ -106,7 +106,7 @@
         }
 
         nav.scrolled {
-            padding: 15px 40px; 
+            padding: 15px 40px; /* Adjusted scrolled padding */
             background: rgba(255, 255, 255, 0.97); 
             box-shadow: 0 3px 10px var(--shadow-soft); 
         }
@@ -134,7 +134,7 @@
             font-weight: 700;
             color: var(--text-dark-primary);
             display: block; 
-            text-transform: uppercase; 
+            text-transform: uppercase; /* Added for BONFATTI S.R.L. */
         }
         .logo .logo-subtext {
             font-size: 0.75rem;
@@ -200,7 +200,7 @@
             padding: 10px;
             z-index: 1005; 
             position: absolute; 
-            right: 20px; 
+            right: 20px; /* Adjusted if nav padding changes significantly */
             top: 50%;
             transform: translateY(-50%);
         }
@@ -589,39 +589,23 @@
             }
         }
 
-        .product-intro-content {
-            min-width: 0; 
-        }
-
         .product-intro-content .product-title {
             font-size: clamp(1.8rem, 4vw, 2.6rem);
             color: var(--accent-blue-primary);
             margin-bottom: 12px;
             font-weight: 700;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
         .product-intro-content .product-subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
             color: var(--text-dark-secondary);
             margin-bottom: 18px;
             font-weight: 500;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
         }
         .product-intro-content .product-description {
             font-size: 1rem;
             color: var(--text-dark-secondary);
             line-height: 1.7;
             margin-bottom: 25px;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
 
         .product-intro-gallery-wrapper {
@@ -755,21 +739,11 @@
             color: var(--text-dark-primary);
             margin-bottom: 8px;
             font-weight: 600;
-            word-break: break-word; 
-            overflow-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
         .product-variant-block p { 
             font-size: 0.85rem;
             color: var(--text-dark-secondary);
             line-height: 1.6;
-            word-break: break-word; 
-            overflow-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
         
         .product-details-area { 
@@ -790,9 +764,6 @@
             font-size: 0.9rem;
             word-break: break-word; 
             overflow-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
         .product-features li::before {
             content: '›'; 
@@ -845,9 +816,6 @@
             font-size: 0.85rem; 
             word-break: break-word; 
             overflow-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            hyphens: auto;
         }
         .spec-list li::before { content: "▪"; color: var(--accent-blue-primary); margin-right: 6px; }
 
@@ -994,44 +962,21 @@
                 margin-bottom: 60px; 
             }
             .product-header-area .product-title { 
-                font-size: clamp(1.3rem, 4.5vw, 1.7rem); /* Adjusted for mobile */
+                font-size: clamp(1.4rem, 4.8vw, 1.9rem); 
                 word-break: break-word; 
                 overflow-wrap: break-word;
-                -webkit-hyphens: auto;
-                -ms-hyphens: auto;
-                hyphens: auto;
             }
-            .product-header-area .product-subtitle { 
-                font-size: clamp(0.9rem, 3vw, 1rem); 
-                word-break: break-word; 
-                overflow-wrap: break-word;
-                -webkit-hyphens: auto;
-                -ms-hyphens: auto;
-                hyphens: auto;
-            }
+            .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
             .product-header-area .product-description { 
-                font-size: 0.85rem; /* Adjusted for mobile */
+                font-size: 0.9rem; 
                 word-break: break-word; 
                 overflow-wrap: break-word;
-                -webkit-hyphens: auto;
-                -ms-hyphens: auto;
-                hyphens: auto;
             }
             
             .product-details-area { grid-template-columns: 1fr; } 
             .product-features li, .spec-list li {
                  word-break: break-word; 
                  overflow-wrap: break-word;
-                 -webkit-hyphens: auto;
-                 -ms-hyphens: auto;
-                 hyphens: auto;
-            }
-            .product-variant-block h4, .product-variant-block p {
-                word-break: break-word; 
-                overflow-wrap: break-word;
-                -webkit-hyphens: auto;
-                -ms-hyphens: auto;
-                hyphens: auto;
             }
 
 
@@ -1530,4 +1475,3 @@
     </script>
 </body>
 </html>
-
