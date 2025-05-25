@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASTRI TRASPORTATORI MODULARI</title>
+    <meta name="description" content="Bonfatti S.r.l. progetta e realizza nastri trasportatori modulari e soluzioni innovative per l'automazione industriale. Scopri i nostri prodotti e vantaggi.">
+    <title>NASTRI TRASPORTATORI MODULARI - Bonfatti S.r.l.</title>
+    <!-- SEO: Placeholder per Dati Strutturati JSON-LD 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BONFATTI S.R.L.",
+      "url": "URL_DEL_TUO_SITO_QUI",
+      "logo": "URL_DEL_TUO_LOGO_QUI",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+39-059-859-921",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    -->
     <style>
         * {
             margin: 0;
@@ -12,40 +29,39 @@
         }
 
         :root {
-            --bg-dark: #0a0a14; 
-            --bg-dark-card: #10131f; 
-            --bg-dark-overlay: rgba(10, 10, 20, 0.7); 
+            --bg-light-primary: #f4f8fa; /* Sfondo principale molto chiaro */
+            --bg-light-secondary: #ffffff; /* Sfondo per card e elementi distinti */
+            --bg-light-section-alt: #e9edf0; /* Sfondo alternativo per sezioni */
             
-            --accent-blue-primary: #4f46e5; 
-            --accent-blue-primary-rgb: 79, 70, 229;
-            --accent-blue-secondary: #00A9E0; 
-            --accent-blue-secondary-rgb: 0, 169, 224;
-            --accent-glow: rgba(var(--accent-blue-primary-rgb), 0.35), rgba(var(--accent-blue-secondary-rgb), 0.25); 
-            --accent-cyan-light: #5ac8fa; 
+            --accent-blue-primary: #007bff; /* Blu primario tecnologico, classico e pulito */
+            --accent-blue-secondary: #00b8d4; /* Ciano/Blu secondario più brillante */
+            --accent-blue-primary-rgb: 0, 123, 255;
+            --accent-blue-secondary-rgb: 0, 184, 212;
 
+            --text-dark-primary: #212529;  /* Testo principale scuro, alta leggibilità */
+            --text-dark-secondary: #6c757d; /* Testo secondario grigio medio */
+            --text-on-accent-light: #ffffff; /* Testo su sfondi colorati */
 
-            --text-primary-dark: #e5e7eb;  
-            --text-secondary-dark: #9ca3af; 
-            --text-accent-dark: var(--accent-blue-primary);
-            --text-on-accent: #ffffff;
+            --border-light: #dee2e6; /* Bordo sottile e chiaro */
+            --border-light-accent: rgba(var(--accent-blue-primary-rgb), 0.3);
 
-
-            --border-dark: rgba(255, 255, 255, 0.08); 
-            --shadow-glow: 0 0 20px rgba(var(--accent-blue-primary-rgb), 0.25), 0 0 40px rgba(var(--accent-blue-secondary-rgb), 0.2);
+            --shadow-soft: rgba(0, 0, 0, 0.05); 
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+            --shadow-glow-effect-light: 0 0 15px rgba(var(--accent-blue-primary-rgb), 0.15), 0 0 30px rgba(var(--accent-blue-secondary-rgb), 0.1);
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary-dark);
+            background: var(--bg-light-primary);
+            color: var(--text-dark-primary);
             overflow-x: hidden;
-            line-height: 1.7; 
+            line-height: 1.65; 
         }
         body.menu-open {
-            overflow: hidden; /* Prevent scrolling when mobile menu is open */
+            overflow: hidden; 
         }
 
-        /* Animated Background - Aurora + Grid */
+        /* Animated Background - Subtle Grid */
         .bg-animation {
             position: fixed;
             width: 100%;
@@ -55,29 +71,6 @@
             z-index: -2; 
             overflow: hidden;
         }
-
-        .aurora-bg {
-            position: absolute;
-            width: 170%; 
-            height: 170%;
-            top: -35%;   
-            left: -35%;
-            background: 
-                radial-gradient(ellipse at 20% 25%, hsla(244, 70%, 60%, 0.18) 0%, transparent 50%), 
-                radial-gradient(ellipse at 80% 70%, hsla(196, 100%, 55%, 0.18) 0%, transparent 50%), 
-                radial-gradient(ellipse at 50% 50%, hsla(220, 70%, 55%, 0.12) 0%, transparent 60%); 
-            animation: auroraMovement 30s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; 
-            opacity: 0.7; 
-            filter: blur(70px); 
-        }
-
-        @keyframes auroraMovement {
-            0% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
-            25% { transform: translate(10%, -10%) rotate(18deg) scale(1.1); } 
-            50% { transform: translate(-10%, 10%) rotate(-18deg) scale(0.95); }  
-            75% { transform: translate(0%, 10%) rotate(10deg) scale(1.1); }   
-            100% { transform: translate(0%, 0%) rotate(0deg) scale(1); }
-        }
         
         .grid-overlay { 
             position: fixed;
@@ -86,56 +79,36 @@
             top: 0;
             left: 0;
             background-image:
-                linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px), 
-                linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-            background-size: 80px 80px; 
+                linear-gradient(rgba(var(--accent-blue-primary-rgb), 0.04) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(var(--accent-blue-primary-rgb), 0.04) 1px, transparent 1px);
+            background-size: 70px 70px; 
             z-index: -1; 
-            animation: gridMoveDark 25s linear infinite; 
-            opacity: 0.25; 
+            animation: gridMoveLight 30s linear infinite;
+            opacity: 0.6; 
         }
 
-        @keyframes gridMoveDark {
+        @keyframes gridMoveLight {
             0% { background-position: 0 0; }
-            100% { background-position: 80px 80px; }
+            100% { background-position: 70px 70px; }
         }
         
-        .particles { 
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            background: var(--accent-blue-primary);
-            border-radius: 50%;
-            animation: floatDark 25s infinite linear;
-        }
-        @keyframes floatDark {
-            from { transform: translateY(100vh) translateX(0) scale(0.4); opacity: 0; }
-            10% { opacity: 0.12; transform: scale(0.9); } 
-            90% { opacity: 0.12; transform: scale(1.2); } 
-            to { transform: translateY(-100vh) translateX(200px) scale(0.6); opacity: 0; } 
-        }
-
         /* Navigation */
         nav {
             position: fixed;
             width: 100%;
-            padding: 18px 40px; 
+            padding: 22px 40px; 
             z-index: 1000;
-            background: rgba(10, 10, 20, 0.4); 
-            backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
             transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+            border-bottom: 1px solid var(--border-light); 
         }
 
         nav.scrolled {
-            padding: 12px 40px;
-            background: rgba(12, 12, 22, 0.88); 
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35); 
+            padding: 15px 40px; 
+            background: rgba(255, 255, 255, 0.97); 
+            box-shadow: 0 3px 10px var(--shadow-soft); 
         }
 
         .nav-container {
@@ -152,38 +125,53 @@
             left: 40px; 
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.4rem; 
-            font-weight: 700;
-            color: var(--text-primary-dark);
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
             z-index: 1002; 
         }
+        .logo .logo-main-text {
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: var(--text-dark-primary);
+            display: block; 
+            text-transform: uppercase; 
+        }
+        .logo .logo-subtext {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-dark-secondary);
+            display: block; 
+            letter-spacing: 0.5px;
+            margin-top: 0px; 
+        }
         
-        .logo:hover {
+        .logo:hover .logo-main-text {
             color: var(--accent-blue-primary);
+        }
+         .logo:hover { 
             transform: translateY(-50%) scale(1.03); 
         }
 
+
         .nav-links {
             display: flex;
-            gap: 40px; 
+            gap: 45px; 
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-secondary-dark);
+            color: var(--text-dark-secondary);
             text-decoration: none;
-            font-size: 0.85rem; 
+            font-size: 0.9rem; 
             font-weight: 500; 
             transition: color 0.3s ease;
             position: relative;
             text-transform: uppercase;
-            letter-spacing: 1px; 
+            letter-spacing: 0.8px; 
         }
 
         .nav-links a:hover {
-            color: var(--text-primary-dark);
+            color: var(--accent-blue-primary);
         }
 
         .nav-links a::before { 
@@ -192,7 +180,7 @@
             bottom: -6px;
             left: 0;
             right: 0;
-            height: 1px;
+            height: 2px;
             background: var(--accent-blue-primary);
             transform: scaleX(0);
             transform-origin: center; 
@@ -212,28 +200,28 @@
             padding: 10px;
             z-index: 1005; 
             position: absolute; 
-            right: 20px;
+            right: 20px; 
             top: 50%;
             transform: translateY(-50%);
         }
         #mobile-menu-toggle .hamburger-icon span {
             display: block;
             width: 25px;
-            height: 3px;
-            background-color: var(--text-primary-dark);
+            height: 2.5px; 
+            background-color: var(--text-dark-primary);
             margin: 5px 0;
             transition: all 0.3s ease-in-out;
             border-radius: 3px;
         }
 
         #mobile-menu-toggle.active .hamburger-icon span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+            transform: translateY(7.5px) rotate(45deg);
         }
         #mobile-menu-toggle.active .hamburger-icon span:nth-child(2) {
             opacity: 0;
         }
         #mobile-menu-toggle.active .hamburger-icon span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-7.5px) rotate(-45deg);
         }
 
 
@@ -243,9 +231,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 10, 20, 0.98); 
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(244, 248, 250, 0.97); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -253,8 +241,8 @@
             z-index: 1001; 
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-20px);
-            transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(-15px);
+            transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
         }
         #mobile-menu.open {
             opacity: 1;
@@ -267,13 +255,13 @@
             text-align: center;
         }
         #mobile-menu li {
-            margin: 25px 0;
+            margin: 20px 0;
         }
         #mobile-menu a {
-            color: var(--text-primary-dark);
-            font-size: 1.5rem; 
+            color: var(--text-dark-primary);
+            font-size: 1.4rem; 
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.3s ease;
             padding: 10px 20px;
         }
@@ -291,48 +279,37 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 100px 40px 40px; 
+            padding: 120px 40px 60px; 
             text-align: center;
         }
         
         .hero-content {
             z-index: 2;
-            max-width: 900px; 
+            max-width: 950px; 
         }
 
         .hero-title {
-            font-size: clamp(3rem, 10vw, 6.5rem); 
+            font-size: clamp(2.8rem, 9vw, 6rem); 
             font-weight: 800; 
-            line-height: 1.05; 
-            margin-bottom: 25px;
-            color: var(--text-primary-dark); 
+            line-height: 1.1; 
+            margin-bottom: 30px; 
+            color: var(--text-dark-primary); 
         }
 
         .hero-title .line { display: block; overflow: hidden; }
         .hero-title .line span {
             display: inline-block;
-            transform: translateY(120%); 
+            transform: translateY(110%); 
             opacity: 0;
-            animation: revealTextDark 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
+            animation: revealTextLight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
             animation-delay: var(--delay);
         }
-        @keyframes revealTextDark { 
+        @keyframes revealTextLight { 
             to { transform: translateY(0); opacity: 1; }
         }
 
         .gradient-text-hero { 
-            background: linear-gradient(120deg, var(--accent-blue-primary) 20%, var(--accent-blue-secondary) 50%, var(--accent-cyan-light) 80%);
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-            background-size: 250% 100%; 
-            animation: gradientShiftHero 5s ease-in-out infinite alternate; 
-        }
-        @keyframes gradientShiftHero { 
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            color: var(--accent-blue-primary); 
         }
         
         .gradient-text {
@@ -346,19 +323,19 @@
 
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem); 
-            color: var(--text-secondary-dark);
-            margin-bottom: 40px;
+            font-size: clamp(1.15rem, 2.8vw, 1.5rem); 
+            color: var(--text-dark-secondary);
+            margin-bottom: 50px; 
             opacity: 0;
-            transform: translateY(50px); 
-            animation: fadeInUpDark 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; 
-            max-width: 600px; 
+            transform: translateY(40px); 
+            animation: fadeInUpLight 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; 
+            max-width: 700px; 
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.65;
         }
-        @keyframes fadeInUpDark { 
-            from { opacity: 0; transform: translateY(var(--start-y, 50px)); } 
+        @keyframes fadeInUpLight { 
+            from { opacity: 0; transform: translateY(var(--start-y, 40px)); } 
             to { opacity: 1; transform: translateY(0); } 
         }
 
@@ -367,28 +344,29 @@
             align-items: center;
             gap: 12px;
             padding: 15px 35px; 
-            background: linear-gradient(90deg, var(--accent-blue-primary), var(--accent-blue-secondary));
-            color: var(--text-on-accent);
+            background: var(--accent-blue-primary);
+            color: var(--text-on-accent-light);
             text-decoration: none;
             border: none;
-            border-radius: 10px; 
-            font-weight: 600;
+            border-radius: 8px; 
+            font-weight: 500; 
             font-size: 1rem; 
-            letter-spacing: 0.5px; 
-            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            letter-spacing: 0.3px; 
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease, box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
             position: relative;
             opacity: 0;
-            animation: fadeInUpDark 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards; 
-            box-shadow: 0 6px 25px rgba(79, 70, 229, 0.3); 
+            animation: fadeInUpLight 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1.3s forwards; 
+            box-shadow: 0 4px 15px rgba(var(--accent-blue-primary-rgb), 0.2); 
         }
 
         .hero-cta:hover {
-            transform: translateY(-6px) scale(1.05); 
-            box-shadow: 0 12px 35px rgba(79, 70, 229, 0.45), 0 0 40px rgba(0, 169, 224, 0.3); 
+            transform: translateY(-4px); 
+            background: var(--accent-blue-secondary);
+            box-shadow: 0 8px 25px rgba(var(--accent-blue-secondary-rgb), 0.3); 
         }
         
         .hero-cta svg { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
-        .hero-cta:hover svg { transform: translateX(6px); } 
+        .hero-cta:hover svg { transform: translateX(5px); } 
 
         .scroll-indicator {
             position: absolute;
@@ -396,8 +374,8 @@
             left: 50%;
             transform: translateX(-50%);
             opacity: 0;
-            animation: fadeInUpDark 1s ease-out 2.2s forwards; 
-            color: var(--text-secondary-dark);
+            animation: fadeInUpLight 1s ease-out 2s forwards; 
+            color: var(--text-dark-secondary);
             font-size: 0.8rem;
             display: flex;
             flex-direction: column;
@@ -408,52 +386,60 @@
             display: inline-block;
             width: 1.5px; 
             height: 25px; 
-            background: var(--text-secondary-dark);
-            animation: scrollPulse 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1); 
+            background: var(--text-dark-secondary);
+            animation: scrollPulseLight 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1); 
         }
-        @keyframes scrollPulse {
+        @keyframes scrollPulseLight {
             0%, 100% { opacity: 0.3; transform: scaleY(0.3); } 
             50% { opacity: 1; transform: scaleY(1.15); }
         }
 
 
         /* Sections Base */
+        main { 
+            display: block; 
+        }
+
         section {
             padding: 100px 40px; 
             position: relative;
             overflow: hidden; 
         }
+        section:nth-of-type(even) { 
+            background-color: var(--bg-light-section-alt); 
+        }
+
 
         .section-header {
             text-align: center;
-            margin-bottom: 70px; 
+            margin-bottom: 60px; 
             opacity: 0;
-            transform: translateY(60px); 
+            transform: translateY(50px); 
         }
-        .section-header.visible { animation: fadeInUpDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; } 
+        .section-header.visible { animation: fadeInUpLight 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; } 
 
         .section-label {
             font-size: 0.8rem; 
-            color: var(--text-accent-dark);
+            color: var(--accent-blue-primary);
             text-transform: uppercase;
-            letter-spacing: 2.5px; 
-            margin-bottom: 15px; 
+            letter-spacing: 2px; 
+            margin-bottom: 12px; 
             display: block;
             font-weight: 600;
         }
 
         .section-title {
-            font-size: clamp(2.2rem, 5vw, 3.5rem); 
+            font-size: clamp(2.1rem, 4.8vw, 3.3rem); 
             font-weight: 700; 
-            line-height: 1.2;
+            line-height: 1.25;
             margin-bottom: 15px;
-            color: var(--text-primary-dark);
+            color: var(--text-dark-primary);
         }
 
         .section-subtitle {
-            font-size: clamp(1.05rem, 2.2vw, 1.25rem); 
-            color: var(--text-secondary-dark);
-            max-width: 750px; 
+            font-size: clamp(1rem, 2.1vw, 1.2rem); 
+            color: var(--text-dark-secondary);
+            max-width: 700px; 
             margin: 0 auto;
             line-height: 1.65;
         }
@@ -461,9 +447,9 @@
         /* Counter Stats Section */
         .counter-stats {
             padding: 70px 40px;
-            background: rgba(16, 19, 31, 0.6); 
-            border-top: 1px solid var(--border-dark);
-            border-bottom: 1px solid var(--border-dark);
+            background: var(--bg-light-section-alt); 
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
             text-align: center;
         }
         .counter-grid {
@@ -485,15 +471,15 @@
         }
         .counter-number {
             display: block;
-            font-size: clamp(2.8rem, 7vw, 4.5rem); 
+            font-size: clamp(2.8rem, 7vw, 4.2rem); 
             font-weight: 700;
-            color: var(--accent-blue-secondary);
-            margin-bottom: 5px;
-            line-height: 1.1;
+            color: var(--accent-blue-primary); 
+            margin-bottom: 8px;
+            line-height: 1;
         }
         .counter-label {
             font-size: 0.9rem;
-            color: var(--text-secondary-dark);
+            color: var(--text-dark-secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -501,181 +487,143 @@
 
         /* Features Grid */
         .features {
-            border-bottom: 1px solid var(--border-dark);
             padding-top: 100px; padding-bottom: 100px; 
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
+            gap: 25px; 
             max-width: 1200px; 
             margin: 0 auto;
         }
 
         .feature-card {
-            background: var(--bg-dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.04); 
-            border-radius: 12px; 
-            padding: 30px; 
-            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1); 
+            background: var(--bg-light-secondary);
+            border: 1px solid var(--border-light); 
+            border-radius: 10px; 
+            padding: 25px; 
+            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1); 
             position: relative;
             opacity: 0;
-            transform: translateY(50px); 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.25); 
+            transform: translateY(40px); 
+            box-shadow: 0 4px 12px var(--shadow-soft); 
             overflow: hidden; 
         }
         .feature-card.visible {
-            animation: fadeInUpDark 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
-            animation-delay: calc(var(--index) * 0.12s); 
+            animation: fadeInUpLight 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; 
+            animation-delay: calc(var(--index) * 0.1s); 
         }
         
         .feature-card::after { 
             content: "";
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%; 
+            transform: translateX(-50%);
             width: 0;
             height: 3px; 
-            background: linear-gradient(90deg, var(--accent-blue-primary), var(--accent-blue-secondary));
-            transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1); 
+            background: var(--accent-blue-primary);
+            transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1); 
         }
 
         .feature-card:hover {
-            transform: translateY(-10px) scale(1.02); 
-            border-color: var(--accent-blue-primary); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4), 0 0 35px var(--accent-glow); 
+            transform: translateY(-6px); 
+            box-shadow: 0 10px 25px var(--shadow-light-medium); 
         }
 
         .feature-card:hover::after {
-            width: 100%; 
-        }
-
-
-        .feature-icon { 
-            width: 45px; 
-            height: 45px;
-            border-radius: 10px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem; 
-            margin-bottom: 18px; 
-            transition: background 0.3s ease, transform 0.3s ease;
-            color: var(--accent-blue-primary); 
+            width: 60%; 
         }
       
         .feature-title {
-            font-size: 1.2rem; 
+            font-size: 1.15rem; 
             font-weight: 600;
-            margin-top: 18px; 
-            margin-bottom: 8px; 
-            color: var(--text-primary-dark);
+            margin-bottom: 10px; 
+            color: var(--text-dark-primary);
         }
         .feature-description {
-            color: var(--text-secondary-dark);
+            color: var(--text-dark-secondary);
             font-size: 0.9rem;
             line-height: 1.6;
         }
 
-        /* Products Section - Enhanced Gallery */
+        /* Products Section - Restructured */
         .products { 
             position: relative; 
             padding-bottom: 0; 
         }
 
-        .product-entry {
+        .product-group { 
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .product-group.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-introduction-block {
             display: grid;
-            grid-template-columns: 1fr 1fr; 
-            gap: 40px; 
-            margin-bottom: 100px; 
-            opacity: 0; 
-            border: 1px solid var(--border-dark); 
-            border-radius: 16px;
-            padding: 30px; 
-            background: var(--bg-dark-card);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
+            grid-template-columns: 1fr; 
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: var(--bg-light-secondary);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--shadow-soft);
         }
-        .product-entry.visible {
-            opacity: 1; 
-        }
-        .product-entry.visible.slide-left { animation: slideInFromLeftDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; } 
-        .product-entry.visible.slide-right { animation: slideInFromRightDark 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-
-
-        .product-content-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; 
-            min-width: 0; /* Helps prevent overflow with flex/grid children */
-        }
-        .product-gallery-column {
-             display: flex;
-             flex-direction: column;
-             align-items: center; 
-             min-width: 0; /* Helps prevent overflow with flex/grid children */
-        }
-        .product-entry:nth-child(even) .product-content-column {
-            order: 2;
-        }
-        .product-entry:nth-child(even) .product-gallery-column {
-            order: 1;
+        @media (min-width: 992px) { 
+            .product-introduction-block {
+                grid-template-columns: 0.9fr 1.1fr; 
+                gap: 50px;
+            }
+            .product-introduction-block--align-image-right .product-intro-gallery-wrapper { 
+                order: 2;
+            }
+            .product-introduction-block--align-image-right .product-intro-content { 
+                order: 1;
+            }
         }
 
-
-        .product-header-area {
-            text-align: left; 
-            margin-bottom: 30px;
-            position: relative; 
-        }
-        .product-header-area .product-number {
-            font-size: 4.5rem; 
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.03); 
-            position: absolute;
-            top: -30px; 
-            left: -10px; 
-            transform: none;
-            z-index: 0;
-            user-select: none;
-        }
-
-        .product-header-area .product-title {
-            font-size: clamp(1.6rem, 3.5vw, 2.2rem); 
+        .product-intro-content .product-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--accent-blue-primary);
+            margin-bottom: 12px;
             font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--text-primary-dark);
-            position: relative; z-index: 1;
             word-break: break-word; 
             overflow-wrap: break-word;
         }
-        .product-header-area .product-subtitle {
-            font-size: clamp(1rem, 2.2vw, 1.25rem); 
-            color: var(--text-accent-dark);
-            margin-bottom: 15px;
+        .product-intro-content .product-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-dark-secondary);
+            margin-bottom: 18px;
             font-weight: 500;
-            position: relative; z-index: 1;
         }
-         .product-header-area .product-description {
-            font-size: 0.95rem; 
-            color: var(--text-secondary-dark);
+        .product-intro-content .product-description {
+            font-size: 1rem;
+            color: var(--text-dark-secondary);
             line-height: 1.7;
-            margin-bottom: 20px;
-            position: relative; z-index: 1;
+            margin-bottom: 25px;
             word-break: break-word; 
             overflow-wrap: break-word;
         }
 
+        .product-intro-gallery-wrapper {
+             /* No specific styles needed here if gallery area handles it */
+        }
 
         .product-gallery-area {
             margin-bottom: 0; 
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            background: rgba(var(--accent-blue-primary-rgb), 0.05); 
-            padding: 20px;
-            border: 1px solid rgba(var(--accent-blue-primary-rgb),0.15);
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.25);
+            background: var(--bg-light-section-alt); 
+            padding: 15px;
+            border: 1px solid var(--border-light);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
             width: 100%; 
         }
         .product-main-image-display { 
@@ -684,24 +632,15 @@
             margin-bottom: 15px;
             border-radius: 8px; 
             overflow: hidden;
-            background: var(--bg-dark); 
+            background: var(--bg-light-primary); 
             position: relative; 
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.2); 
-            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            border: 1px solid var(--border-light);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
         }
          .product-main-image-display:hover {
-            transform: scale(1.02); 
+            transform: scale(1.015); 
         }
-         .product-main-image-display::before { 
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(10,10,20,0) 60%, rgba(10,10,20,0.2) 100%);
-            z-index: 1;
-            pointer-events: none;
-            border-radius: 8px;
-        }
-
+        
         .main-image-active { 
             width: 100%;
             height: 100%;
@@ -712,12 +651,12 @@
             opacity: 1; 
         }
         .product-main-image-display:hover .main-image-active {
-             transform: scale(1.03); 
+             transform: scale(1.02); 
         }
         
         .main-image-active.image-swapping { 
             opacity: 0;
-            transform: scale(0.96); 
+            transform: scale(0.97); 
         }
 
 
@@ -730,16 +669,16 @@
             white-space: nowrap; 
         }
         .product-thumbnail-selector::-webkit-scrollbar {
-            height: 8px; 
+            height: 6px; 
         }
         .product-thumbnail-selector::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.03); 
-            border-radius: 4px;
+            background: rgba(0,0,0,0.05); 
+            border-radius: 3px;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb {
             background: var(--accent-blue-secondary);
-            border-radius: 4px;
-            border: 2px solid transparent; 
+            border-radius: 3px;
+            border: 1px solid transparent; 
             background-clip: content-box;
         }
         .product-thumbnail-selector::-webkit-scrollbar-thumb:hover {
@@ -748,40 +687,80 @@
 
 
         .thumbnail { 
-            width: 85px; 
-            height: 65px; 
+            width: 80px; 
+            height: 60px; 
             object-fit: cover;
-            border-radius: 6px; 
+            border-radius: 5px; 
             cursor: pointer;
             border: 2px solid transparent;
             transition: border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
-            opacity: 0.55; 
+            opacity: 0.7; 
             flex-shrink: 0; 
         }
         .thumbnail:hover {
             opacity: 1;
-            transform: scale(1.1); 
+            transform: scale(1.08); 
             border-color: var(--accent-blue-secondary);
-            box-shadow: 0 0 12px rgba(var(--accent-blue-secondary-rgb), 0.6);
+            box-shadow: 0 0 8px rgba(var(--accent-blue-secondary-rgb), 0.3);
         }
         .thumbnail.active {
             border-color: var(--accent-blue-primary);
             opacity: 1;
-            transform: scale(1.12); 
-            box-shadow: 0 0 18px rgba(var(--accent-blue-primary-rgb), 0.7);
+            transform: scale(1.1); 
+            box-shadow: 0 0 12px rgba(var(--accent-blue-primary-rgb), 0.4);
         }
         
-        .product-details-area {
+        .product-variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+            gap: 25px;
+            margin-top: 40px; 
+        }
+
+        .product-variant-block {
+            background: var(--bg-light-secondary); 
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left; 
+            box-shadow: 0 4px 15px var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-variant-block:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 10px 25px var(--shadow-medium);
+        }
+        .product-variant-block img {
+            width: 100%;
+            height: 160px; 
+            object-fit: cover; 
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background-color: var(--bg-light-section-alt); 
+        }
+        .product-variant-block h4 { 
+            font-size: 1.05rem;
+            color: var(--text-dark-primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .product-variant-block p { 
+            font-size: 0.85rem;
+            color: var(--text-dark-secondary);
+            line-height: 1.6;
+        }
+        
+        .product-details-area { 
             display: flex; 
             flex-direction: column;
             justify-content: space-between; 
             height: 100%;
-            min-width: 0; /* Helps prevent overflow */
+            min-width: 0; 
         }
 
         .product-features { list-style: none; margin-bottom: 20px; } 
         .product-features li {
-            color: var(--text-secondary-dark);
+            color: var(--text-dark-secondary);
             margin-bottom: 10px;
             padding-left: 22px;
             position: relative;
@@ -789,6 +768,9 @@
             font-size: 0.9rem;
             word-break: break-word; 
             overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .product-features li::before {
             content: '›'; 
@@ -799,10 +781,10 @@
             font-weight: bold;
             transition: color 0.3s ease;
         }
-        .product-features li strong { color: var(--text-primary-dark); font-weight: 500; }
-        .product-features li:hover { color: var(--text-primary-dark); transform: translateX(5px); } 
+        .product-features li strong { color: var(--text-dark-primary); font-weight: 500; }
+        .product-features li:hover { color: var(--accent-blue-primary); transform: translateX(5px); } 
         .product-features li:hover::before { color: var(--accent-blue-secondary); }
-        .product-features li:hover strong { color: var(--text-primary-dark); }
+        .product-features li:hover strong { color: var(--accent-blue-primary); }
 
 
         .product-specs-container { 
@@ -816,18 +798,18 @@
 
 
         .spec-box {
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 18px;
+            background: rgba(var(--accent-blue-primary-rgb), 0.05); 
+            border: 1px solid rgba(var(--accent-blue-primary-rgb), 0.1);
+            border-radius: 8px;
+            padding: 15px;
             transition: background 0.3s ease, border-color 0.3s ease;
         }
         .spec-box:hover {
-            background: rgba(255, 255, 255, 0.06); 
+            background: rgba(var(--accent-blue-primary-rgb), 0.08); 
             border-color: var(--accent-blue-primary);
         }
         .spec-title {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--accent-blue-primary);
             text-transform: uppercase;
             letter-spacing: 0.8px;
@@ -836,11 +818,14 @@
         }
         .spec-list { list-style: none; }
         .spec-list li { 
-            color: var(--text-primary-dark); 
+            color: var(--text-dark-primary); 
             margin-bottom: 5px; 
             font-size: 0.85rem; 
             word-break: break-word; 
             overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .spec-list li::before { content: "▪"; color: var(--accent-blue-primary); margin-right: 6px; }
 
@@ -862,7 +847,7 @@
 
         /* Contact Section */
         .contact {
-            background: linear-gradient(to bottom, var(--bg-dark) 0%, rgba(79, 70, 229, 0.03) 100%); 
+            background: var(--bg-light-section-alt); 
             text-align: center;
             padding-top: 90px; 
             padding-left: 40px; 
@@ -878,6 +863,7 @@
             position: relative;
             height: 0;
             border-radius: 8px; 
+            border: 1px solid var(--border-light);
         }
 
         .map-container-constrained iframe {
@@ -898,7 +884,7 @@
 
         .contact-details-text-container h3 {
             font-size: 1.8rem;
-            color: var(--text-primary-dark);
+            color: var(--text-dark-primary);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -912,12 +898,12 @@
 
         .contact-details-text-container p {
             font-size: 1rem;
-            color: var(--text-secondary-dark);
+            color: var(--text-dark-secondary);
             line-height: 1.8;
             margin-bottom: 8px;
         }
         .contact-details-text-container p strong {
-            color: var(--text-primary-dark);
+            color: var(--text-dark-primary);
             font-weight: 500;
         }
          .contact-details-text-container a {
@@ -934,11 +920,11 @@
         /* Footer */
         footer {
             padding: 30px 40px;
-            background: #06060e; 
+            background: #e9ecef; 
             text-align: center;
-            border-top: 1px solid var(--border-dark);
+            border-top: 1px solid var(--border-light);
         }
-        footer p { color: var(--text-secondary-dark); font-size: 0.8rem; }
+        footer p { color: var(--text-dark-secondary); font-size: 0.8rem; }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -957,38 +943,70 @@
             .hero-title { font-size: clamp(2.2rem, 10vw, 4.0rem); } 
             .hero-subtitle { font-size: clamp(1rem, 3.5vw, 1.2rem); }
 
-            .product-entry { 
+            .product-introduction-block { 
                 grid-template-columns: 1fr; 
-                padding: 20px; /* Adjusted padding for mobile */
+                padding: 20px; 
+            }
+            .product-introduction-block.product-introduction-block--align-image-right .product-intro-gallery-wrapper,
+            .product-introduction-block .product-intro-gallery-wrapper { 
+                order: -1; 
+                margin-bottom: 25px;
+            }
+             .product-introduction-block.product-introduction-block--align-image-right .product-intro-content,
+             .product-introduction-block .product-intro-content {
+                order: 2; 
+            }
+
+
+            .product-main-image-display { height: 280px; } 
+            .product-thumbnail-selector { justify-content: flex-start; } 
+            .thumbnail { width: 70px; height: 50px; }
+
+            .product-variants-grid { grid-template-columns: 1fr; gap: 20px; }
+            .product-variant-block { padding: 15px; }
+            .product-variant-block img { height: 150px; }
+
+
+            .product-entry { 
+                padding: 20px; 
                 margin-bottom: 60px; 
             }
-            .product-entry:nth-child(even) .product-content-column,
-            .product-entry:nth-child(even) .product-gallery-column {
-                order: initial; 
-            }
-            .product-content-column, .product-gallery-column {
-                min-width: 0; /* Ensure columns can shrink */
-            }
-            .product-gallery-column { margin-top: 30px; } 
-
             .product-header-area .product-title { 
-                font-size: clamp(1.4rem, 4.8vw, 1.9rem); 
+                font-size: clamp(1.4rem, 4.5vw, 1.8rem); 
+                word-break: break-word; 
+                overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+            }
+            .product-header-area .product-subtitle { 
+                font-size: clamp(1rem, 3vw, 1.1rem); 
                 word-break: break-word; 
                 overflow-wrap: break-word;
             }
-            .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
             .product-header-area .product-description { 
                 font-size: 0.9rem; 
                 word-break: break-word; 
                 overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
-            .product-main-image-display { height: 280px; } 
-            .product-thumbnail-selector { grid-template-columns: repeat(3, 1fr); gap: 10px;} 
-            .thumbnail { height: 60px; } 
+            
             .product-details-area { grid-template-columns: 1fr; } 
             .product-features li, .spec-list li {
                  word-break: break-word; 
                  overflow-wrap: break-word;
+                 -webkit-hyphens: auto;
+                 -ms-hyphens: auto;
+                 hyphens: auto;
+            }
+            .product-variant-block h4, .product-variant-block p {
+                word-break: break-word; 
+                overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
 
 
@@ -1005,23 +1023,24 @@
         }
 
         html { scroll-behavior: smooth; }
-        ::selection { background: var(--accent-blue-primary); color: var(--text-on-accent); }
+        ::selection { background: var(--accent-blue-primary); color: var(--text-on-accent-light); }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-track { background: var(--bg-light-primary); } 
         ::-webkit-scrollbar-thumb { background: var(--accent-blue-primary); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue-secondary); }
     </style>
 </head>
 <body>
     <div class="bg-animation">
-        <div class="aurora-bg"></div>
         <div class="grid-overlay"></div>
-        <div class="particles"></div>
-    </div>
+        </div>
 
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">BONFATTI S.R.L.</a>
+            <a href="#home" class="logo">
+                <span class="logo-main-text">BONFATTI S.R.L.</span>
+                <span class="logo-subtext">Bottling plants</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#features">VANTAGGI</a></li>
@@ -1029,7 +1048,7 @@
                 <li><a href="#products">PRODOTTI</a></li>
                 <li><a href="#contact">CONTATTI</a></li>
             </ul>
-            <button id="mobile-menu-toggle" aria-label="Menu" aria-expanded="false">
+            <button id="mobile-menu-toggle" aria-label="Apri menu" aria-expanded="false">
                 <div class="hamburger-icon">
                     <span></span>
                     <span></span>
@@ -1038,7 +1057,7 @@
             </button>
         </div>
     </nav>
-    <div id="mobile-menu">
+    <div id="mobile-menu" aria-hidden="true">
         <ul>
             <li><a href="#home">HOME</a></li>
             <li><a href="#features">VANTAGGI</a></li>
@@ -1048,7 +1067,7 @@
         </ul>
     </div>
 
-
+<main>
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">
@@ -1110,32 +1129,26 @@
         </div>
         <div class="features-grid">
             <div class="feature-card" style="--index: 0;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Consegna Ultra-Rapida</h3>
                 <p class="feature-description">Sistema JUST IN TIME con consegna garantita in soli 5 giorni lavorativi. Massima efficienza per il tuo materiale.</p>
             </div>
             <div class="feature-card" style="--index: 1;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Personalizzazione Avanzata</h3>
                 <p class="feature-description">Dimensioni su misura, configurazione libera dell'azionamento e setup intuitivo tramite il nostro configuratore online.</p>
             </div>
             <div class="feature-card" style="--index: 2;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Qualità Certificata CE</h3>
                 <p class="feature-description">Nastri trasportatori certificati CE con documentazione completa. Eccellente rapporto qualità-prezzo e affidabilità.</p>
             </div>
             <div class="feature-card" style="--index: 3;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Progettazione Dedicata</h3>
                 <p class="feature-description">Il nostro ufficio tecnico realizza soluzioni custom, integrando prodotti modulari con le tue macchine per un successo garantito.</p>
             </div>
             <div class="feature-card" style="--index: 4;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Servizio Chiavi in Mano</h3>
                 <p class="feature-description">Fornitura completa di componenti elettrico-software, installazione e collaudo finale. Assicuriamo il risultato atteso.</p>
             </div>
             <div class="feature-card" style="--index: 5;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Innovazione Continua</h3>
                 <p class="feature-description">Soluzioni come il sistema FSC per cambio formato rapido, annullando i tempi di fermo per la regolazione manuale.</p>
             </div>
@@ -1150,170 +1163,134 @@
         </div>
         
         <div class="product-showcase">
-            <div class="product-entry"> 
-                <div class="product-content-column">
-                    <div class="product-header-area">
-                        <span class="product-number">01</span>
+            <article class="product-group">
+                <div class="product-introduction-block">
+                    <div class="product-intro-content">
                         <h3 class="product-title">IL TRASPORTO MODULARE</h3>
                         <p class="product-subtitle">Flessibilità e Precisione per Ogni Settore</p>
                         <p class="product-description">
-                            La nostra gamma completa di trasportatori modulari è progettata per rispondere a ogni esigenza industriale. Dai settori dell'imbottigliamento alla farmaceutica, offriamo soluzioni su misura.
+                            La nostra gamma completa di trasportatori modulari è progettata per rispondere a ogni esigenza industriale. Dai settori dell'imbottigliamento alla farmaceutica, offriamo soluzioni su misura per ottimizzare i tuoi processi produttivi.
                         </p>
+                         <a href="#" class="product-cta interactive-sound">Scopri di più sul Trasporto Modulare</a>
                     </div>
-                    <div class="product-details-area">
-                        <ul class="product-features">
-                            <li><strong>Rettilinei:</strong> Alta capacità, movimento lineare.</li>
-                            <li><strong>Curvilinei:</strong> Perfetti per layout complessi.</li>
-                            <li><strong>Per Scatole:</strong> Guide integrate, sistema table top.</li>
-                            <li><strong>Gommati:</strong> Ideali per salite e discese.</li>
-                        </ul>
-                        <div class="product-specs-container">
-                            <div class="product-specs">
-                                <div class="spec-box">
-                                    <h4 class="spec-title">Applicazioni</h4>
-                                    <ul class="spec-list">
-                                        <li>Imbottigliamento</li>
-                                        <li>Farmaceutico</li>
-                                        <li>Alimentare</li>
-                                    </ul>
-                                </div>
-                                <div class="spec-box">
-                                    <h4 class="spec-title">Vantaggi Chiave</h4>
-                                    <ul class="spec-list">
-                                        <li>Modularità</li>
-                                        <li>Customizzazione</li>
-                                        <li>Efficienza</li>
-                                    </ul>
-                                </div>
+                    <div class="product-intro-gallery-wrapper">
+                        <div class="product-gallery-area">
+                            <div class="product-main-image-display">
+                                <img src="modulare01.jpg" alt="Trasporto Modulare Bonfatti - Vista Principale" id="mainImageProduct1" class="main-image-active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e9edf0/212529?text=Trasporto+Modulare';">
                             </div>
-                            <a href="#" class="product-cta interactive-sound">Dettagli Tecnici</a>
+                            <div class="product-thumbnail-selector">
+                                <img src="modulare01.jpg" alt="Miniatura 1 del Trasporto Modulare Bonfatti" class="thumbnail active" data-target="#mainImageProduct1" data-src="modulare01.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M1';">
+                                <img src="modulare02.jpg" alt="Miniatura 2 del Trasporto Modulare Bonfatti" class="thumbnail" data-target="#mainImageProduct1" data-src="modulare02.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M2';">
+                                <img src="modulare03.jpg" alt="Miniatura 3 del Trasporto Modulare Bonfatti" class="thumbnail" data-target="#mainImageProduct1" data-src="modulare03.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M3';">
+                                <img src="https://placehold.co/100x75/e9edf0/212529?text=M4" alt="Miniatura 4 del Trasporto Modulare Bonfatti" class="thumbnail" data-target="#mainImageProduct1" data-src="https://placehold.co/800x450/e9edf0/212529?text=Vista+4+Modulare" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M4';">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="product-gallery-column">
-                    <div class="product-gallery-area">
-                        <div class="product-main-image-display">
-                            <img src="modulare01.jpg" alt="Trasporto Modulare Bonfatti - Vista Principale" id="mainImageProduct1" class="main-image-active" onerror="this.onerror=null;this.src='https://placehold.co/800x450/10131f/e5e7eb?text=Immagine+Principale+Prodotto+1';">
-                        </div>
-                        <div class="product-thumbnail-selector">
-                            <img src="modulare01.jpg" alt="Miniatura Trasporto Modulare 1" class="thumbnail active" data-target="#mainImageProduct1" data-src="modulare01.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img1';">
-                            <img src="modulare02.jpg" alt="Miniatura Trasporto Modulare 2" class="thumbnail" data-target="#mainImageProduct1" data-src="modulare02.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img2';">
-                            <img src="modulare03.jpg" alt="Miniatura Trasporto Modulare 3" class="thumbnail" data-target="#mainImageProduct1" data-src="modulare03.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img3';">
-                            <img src="https://placehold.co/100x75/10131f/e5e7eb?text=Modulare+4" alt="Miniatura Trasporto Modulare 4" class="thumbnail" data-target="#mainImageProduct1" data-src="https://placehold.co/800x450/10131f/e5e7eb?text=Vista+4+Modulare" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img4';">
-                        </div>
+                <div class="product-variants-grid">
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+Rettilinei" alt="Variante Trasportatori Rettilinei" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Trasportatori Rettilinei</h4>
+                        <p>Alta capacità di carico con movimento lineare continuo, ideali per flussi produttivi intensi.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+Curvilinei" alt="Variante Trasportatori Curvilinei" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Trasportatori Curvilinei</h4>
+                        <p>Perfetti per layout complessi, gestiscono curve e angolazioni con fluidità ed efficienza.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+Scatole" alt="Variante Trasportatori per Scatole" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Trasportatori per Scatole</h4>
+                        <p>Sistema table top con guide di contenimento integrate, ottimizzato per la movimentazione di imballaggi.</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-entry"> 
-                 <div class="product-content-column">
-                    <div class="product-header-area">
-                        <span class="product-number">02</span>
+            <article class="product-group">
+                <div class="product-introduction-block product-introduction-block--align-image-right">
+                     <div class="product-intro-content">
                         <h3 class="product-title">FAST SIZE CHANGE (FSC)</h3>
                         <p class="product-subtitle">Automazione e Velocità nel Cambio Formato</p>
                         <p class="product-description">
-                            Il sistema FSC rivoluziona il cambio formato, eliminando i tempi morti. Un singolo operatore gestisce il tutto in modo rapido, preciso e sicuro, massimizzando la produttività.
+                            Il sistema FSC rivoluziona il cambio formato, eliminando i tempi morti. Un singolo operatore gestisce il tutto in modo rapido, preciso e sicuro, massimizzando la produttività della linea.
                         </p>
+                         <a href="#" class="product-cta interactive-sound">Dettagli Sistema FSC</a>
                     </div>
-                    <div class="product-details-area">
-                        <ul class="product-features">
-                            <li>Cambio formato record, zero fermi.</li>
-                            <li>Gestione intuitiva, un operatore.</li>
-                            <li>Memorizzazione parametri, ripetibilità.</li>
-                            <li>Integrazione seamless, certificato food.</li>
-                        </ul>
-                        <div class="product-specs-container">
-                            <div class="product-specs">
-                                <div class="spec-box">
-                                    <h4 class="spec-title">Modalità</h4>
-                                    <ul class="spec-list">
-                                        <li>Servomotore</li>
-                                        <li>Manuale</li>
-                                        <li>Confezionamento</li>
-                                    </ul>
-                                </div>
-                                <div class="spec-box">
-                                    <h4 class="spec-title">Performance</h4>
-                                    <ul class="spec-list">
-                                        <li>Zero Downtime</li>
-                                        <li>Alta Precisione</li>
-                                        <li>ROI Rapido</li>
-                                    </ul>
-                                </div>
+                    <div class="product-intro-gallery-wrapper">
+                        <div class="product-gallery-area">
+                            <div class="product-main-image-display">
+                                 <img src="Fsc01.jpg" alt="Attuatore FSC Bonfatti - Vista Principale" id="mainImageProduct2" class="main-image-active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e9edf0/212529?text=Immagine+Principale+FSC';">
                             </div>
-                            <a href="#" class="product-cta interactive-sound">Scopri FSC</a>
+                            <div class="product-thumbnail-selector">
+                                <img src="Fsc01.jpg" alt="Miniatura 1 del sistema FSC" class="thumbnail active" data-target="#mainImageProduct2" data-src="Fsc01.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC1';">
+                                <img src="Fsc02.jpg" alt="Miniatura 2 del sistema FSC" class="thumbnail" data-target="#mainImageProduct2" data-src="Fsc02.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC2';">
+                                <img src="Fsc03.jpg" alt="Miniatura 3 del sistema FSC" class="thumbnail" data-target="#mainImageProduct2" data-src="Fsc03.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC3';">
+                                <img src="https://placehold.co/100x75/e9edf0/212529?text=FSC4" alt="Miniatura 4 del sistema FSC" class="thumbnail" data-target="#mainImageProduct2" data-src="https://placehold.co/800x450/e9edf0/212529?text=Vista+4+FSC" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC4';">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="product-gallery-column">
-                    <div class="product-gallery-area">
-                        <div class="product-main-image-display">
-                             <img src="Fsc01.jpg" alt="Attuatore FSC Bonfatti - Vista Principale" id="mainImageProduct2" class="main-image-active" onerror="this.onerror=null;this.src='https://placehold.co/800x450/10131f/e5e7eb?text=Immagine+Principale+FSC';">
-                        </div>
-                        <div class="product-thumbnail-selector">
-                            <img src="Fsc01.jpg" alt="Miniatura FSC 1" class="thumbnail active" data-target="#mainImageProduct2" data-src="Fsc01.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img1';">
-                            <img src="Fsc02.jpg" alt="Miniatura FSC 2" class="thumbnail" data-target="#mainImageProduct2" data-src="Fsc02.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img2';">
-                            <img src="Fsc03.jpg" alt="Miniatura FSC 3" class="thumbnail" data-target="#mainImageProduct2" data-src="Fsc03.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img3';">
-                            <img src="https://placehold.co/100x75/10131f/e5e7eb?text=FSC+4" alt="Miniatura FSC 4" class="thumbnail" data-target="#mainImageProduct2" data-src="https://placehold.co/800x450/10131f/e5e7eb?text=Vista+4+FSC" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img4';">
-                        </div>
+                 <div class="product-variants-grid">
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=FSC+Servomotore" alt="Variante FSC con Servomotore" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Automazione con Servomotore</h4>
+                        <p>Massima precisione e velocità nel cambio formato grazie al controllo servoassistito.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=FSC+Manuale" alt="Variante FSC Comando Manuale" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Comando Manuale Intuitivo</h4>
+                        <p>Soluzione efficace per una gestione semplificata del cambio formato da parte dell'operatore.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=FSC+Integrazione" alt="Integrazione FSC su Linee Esistenti" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Integrazione Flessibile</h4>
+                        <p>Il sistema FSC si adatta facilmente a impianti esistenti, ottimizzando linee di confezionamento multiformato.</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-entry"> 
-                <div class="product-content-column">
-                     <div class="product-header-area">
-                        <span class="product-number">03</span>
+            <article class="product-group">
+                <div class="product-introduction-block">
+                    <div class="product-intro-content">
                         <h3 class="product-title">NASTRI TRASPORTATORI MODULARI IN ACCIAIO INOX JUST IN TIME</h3>
-                        <p class="product-subtitle">Acciaio Inox, Consegna Just In Time</p>
+                        <p class="product-subtitle">Qualità Inox e Rapidità Imbattibile</p>
                         <p class="product-description">
-                            Il sistema JUST IN TIME combina la qualità superiore dei nostri nastri in acciaio inox con tempi di consegna imbattibili: solo 5 giorni lavorativi per un sistema completo e configurato.
+                            Il nostro sistema JUST IN TIME combina la superiorità dell'acciaio inox AISI 304 con tempi di consegna record: il tuo nastro trasportatore completo e configurato in soli 5 giorni lavorativi.
                         </p>
+                         <a href="#" class="product-cta interactive-sound">Configura il Tuo Nastro JIT</a>
                     </div>
-                    <div class="product-details-area">
-                        <ul class="product-features">
-                            <li>Consegna garantita: 5 giorni.</li>
-                            <li>Configuratore online completo.</li>
-                            <li>100% acciaio inox AISI 304.</li>
-                            <li>Kit pronti, certificazione CE.</li>
-                        </ul>
-                        <div class="product-specs-container">
-                            <div class="product-specs">
-                                <div class="spec-box">
-                                    <h4 class="spec-title">Tipologie JIT</h4>
-                                    <ul class="spec-list">
-                                        <li>Nastro a tappeto</li>
-                                        <li>Catena modulare</li>
-                                        <li>Rulliere motorizzate</li>
-                                    </ul>
-                                </div>
-                                <div class="spec-box">
-                                    <h4 class="spec-title">Specifiche Base</h4>
-                                    <ul class="spec-list">
-                                        <li>Lunghezza <12m</li>
-                                        <li>Larghezza 40-110mm</li>
-                                        <li>Velocità Regolabile</li>
-                                    </ul>
-                                </div>
+                     <div class="product-intro-gallery-wrapper">
+                        <div class="product-gallery-area">
+                            <div class="product-main-image-display">
+                                <img src="jit01.jpg" alt="Nastri JIT Bonfatti - Vista Principale" id="mainImageProduct3" class="main-image-active" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e9edf0/212529?text=Immagine+Principale+JIT';">
                             </div>
-                            <a href="#" class="product-cta interactive-sound">Configura Ora</a>
+                            <div class="product-thumbnail-selector">
+                                <img src="jit01.jpg" alt="Miniatura 1 Nastri JIT Bonfatti" class="thumbnail active" data-target="#mainImageProduct3" data-src="jit01.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT1';">
+                                <img src="jit02.jpg" alt="Miniatura 2 Nastri JIT Bonfatti" class="thumbnail" data-target="#mainImageProduct3" data-src="jit02.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT2';">
+                                <img src="jit03.jpg" alt="Miniatura 3 Nastri JIT Bonfatti" class="thumbnail" data-target="#mainImageProduct3" data-src="jit03.jpg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT3';">
+                                <img src="https://placehold.co/100x75/e9edf0/212529?text=JIT4" alt="Miniatura 4 Nastri JIT Bonfatti" class="thumbnail" data-target="#mainImageProduct3" data-src="https://placehold.co/800x450/e9edf0/212529?text=Vista+4+JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT4';">
+                            </div>
                         </div>
                     </div>
                 </div>
-                 <div class="product-gallery-column">
-                    <div class="product-gallery-area">
-                        <div class="product-main-image-display">
-                            <img src="jit01.jpg" alt="Nastri JIT Bonfatti - Vista Principale" id="mainImageProduct3" class="main-image-active" onerror="this.onerror=null;this.src='https://placehold.co/800x450/10131f/e5e7eb?text=Immagine+Principale+JIT';">
-                        </div>
-                        <div class="product-thumbnail-selector">
-                            <img src="jit01.jpg" alt="Miniatura Nastri JIT 1" class="thumbnail active" data-target="#mainImageProduct3" data-src="jit01.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img1';">
-                            <img src="jit02.jpg" alt="Miniatura Nastri JIT 2" class="thumbnail" data-target="#mainImageProduct3" data-src="jit02.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img2';">
-                            <img src="jit03.jpg" alt="Miniatura Nastri JIT 3" class="thumbnail" data-target="#mainImageProduct3" data-src="jit03.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img3';">
-                            <img src="https://placehold.co/100x75/10131f/e5e7eb?text=JIT+4" alt="Miniatura Nastri JIT 4" class="thumbnail" data-target="#mainImageProduct3" data-src="https://placehold.co/800x450/10131f/e5e7eb?text=Vista+4+JIT" onerror="this.onerror=null;this.src='https://placehold.co/100x75/10131f/e5e7eb?text=Img4';">
-                        </div>
+                 <div class="product-variants-grid">
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Nastro+a+Tappeto+JIT" alt="Variante Nastro a Tappeto JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Nastri a Tappeto JIT</h4>
+                        <p>Soluzioni versatili e rapide per il trasporto di una vasta gamma di prodotti.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Catena+Modulare+JIT" alt="Variante Catena Modulare JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Catene Modulari JIT</h4>
+                        <p>Robustezza e flessibilità per applicazioni specifiche, consegnate in tempi record.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Rulliere+JIT" alt="Variante Rulliere JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Rulliere Motorizzate e a Gravità JIT</h4>
+                        <p>Sistemi di trasporto a rulli efficienti e pronti all'uso in soli 5 giorni.</p>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -1343,7 +1320,7 @@
             <p>08:30 – 18:00</p>
         </div>
     </section>
-
+</main>
     <footer>
         <p>© 2024 Bonfatti S.r.l. | Tutti i diritti riservati | P.IVA 03676200367</p>
     </footer>
@@ -1353,7 +1330,7 @@
 
             const particlesContainer = document.querySelector('.particles');
             if (particlesContainer) {
-                const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-blue-primary').trim() || '#4f46e5';
+                const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-blue-primary').trim() || '#007bff';
                 for (let i = 0; i < 25; i++) { 
                     const particle = document.createElement('div');
                     particle.className = 'particle';
@@ -1420,16 +1397,21 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        if(entry.target.classList.contains('product-entry')) { 
-                            const productEntries = Array.from(entry.target.parentNode.querySelectorAll('.product-entry'));
-                            const index = productEntries.indexOf(entry.target);
-                            const isEven = index % 2 !== 0; 
-                            if (window.innerWidth > 768) { 
-                                if (isEven) {
-                                    entry.target.classList.add('slide-right');
-                                } else {
+                        if(entry.target.classList.contains('product-group')) { 
+                            const productGroups = Array.from(entry.target.parentNode.querySelectorAll('.product-group'));
+                            const index = productGroups.indexOf(entry.target);
+                            const isEven = index % 2 === 0; 
+                            
+                            if (window.innerWidth > 768) {
+                               if (entry.target.querySelector('.product-introduction-block.product-introduction-block--align-image-right') && !isEven) { 
+                                   entry.target.classList.add('slide-right');
+                               } else if (!entry.target.querySelector('.product-introduction-block.product-introduction-block--align-image-right') && isEven) { 
                                     entry.target.classList.add('slide-left');
-                                }
+                               } else if (entry.target.querySelector('.product-introduction-block.product-introduction-block--align-image-right') && isEven) {
+                                    entry.target.classList.add('slide-left'); 
+                               } else {
+                                    entry.target.classList.add('slide-right'); 
+                               }
                             } else { 
                                 entry.target.classList.add('slide-left');
                             }
@@ -1443,7 +1425,7 @@
                     }
                 });
             }, observerOptions);
-            document.querySelectorAll('.section-header, .feature-card, .product-entry, .contact-item, .hero-subtitle, .hero-cta, .scroll-indicator, .contact-details-text-container, .counter-item').forEach(el => observer.observe(el)); 
+            document.querySelectorAll('.section-header, .feature-card, .product-group, .contact-item, .hero-subtitle, .hero-cta, .scroll-indicator, .contact-details-text-container, .counter-item').forEach(el => observer.observe(el)); 
             
             const animateCounter = (element) => {
                 const target = +element.dataset.target;
@@ -1454,7 +1436,7 @@
                 element.textContent = '0'; 
 
                 let startTime = null;
-                const duration = 2000; 
+                const duration = 1800; 
 
                 const step = (timestamp) => {
                     if (!startTime) startTime = timestamp;
@@ -1486,7 +1468,7 @@
                             mainImageElement.src = newImageSrc;
                             mainImageElement.onerror = function() { 
                                 this.onerror=null;
-                                this.src='https://placehold.co/800x450/10131f/e5e7eb?text=Immagine+non+caricata';
+                                this.src='https://placehold.co/800x450/e9edf0/212529?text=Immagine+non+caricata';
                             };
                             setTimeout(() => mainImageElement.classList.remove('image-swapping'), 50); 
                         }, 200); 
@@ -1508,17 +1490,17 @@
                     document.querySelectorAll('.interactive-sound').forEach(el => {
                         el.addEventListener('mouseenter', () => {
                             if (audioCtx && audioCtx.state === 'suspended') {
-                                audioCtx.resume().catch(e => {});
+                                audioCtx.resume().catch(e => {console.warn("AudioContext resume failed:", e);});
                             }
                             hoverSound.currentTime = 0; 
-                            hoverSound.play().catch(e => {});
+                            hoverSound.play().catch(e => {console.warn("Audio play failed:", e);});
                         });
                     });
                 }
-            } catch(e) { console.warn("Audio API/sound init failed."); }
+            } catch(e) { console.warn("Audio API/sound init failed:", e); }
             
-            console.log('%c BONFATTI S.R.L. ', 'background: linear-gradient(135deg, #4f46e5, #00A9E0); color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.2);');
-            console.log('%c ::: Programmatic Conveyor Solutions ::: ', 'color: #00A9E0; font-size: 12px; font-style: italic;');
+            console.log('%c BONFATTI S.R.L. ', 'background: linear-gradient(135deg, #007bff, #00b8d4); color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 5px; border: 1px solid rgba(0,0,0,0.1);');
+            console.log('%c ::: Soluzioni di Trasporto Modulare ::: ', 'color: #007bff; font-size: 12px; font-style: italic;');
         });
     </script>
 </body>
