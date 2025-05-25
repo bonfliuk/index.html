@@ -96,7 +96,7 @@
         nav {
             position: fixed;
             width: 100%;
-            padding: 22px 40px; /* Increased vertical padding */
+            padding: 22px 40px; 
             z-index: 1000;
             background: rgba(255, 255, 255, 0.85); 
             backdrop-filter: blur(10px); 
@@ -106,7 +106,7 @@
         }
 
         nav.scrolled {
-            padding: 15px 40px; /* Adjusted scrolled padding */
+            padding: 15px 40px; 
             background: rgba(255, 255, 255, 0.97); 
             box-shadow: 0 3px 10px var(--shadow-soft); 
         }
@@ -134,7 +134,7 @@
             font-weight: 700;
             color: var(--text-dark-primary);
             display: block; 
-            text-transform: uppercase; /* Added for BONFATTI S.R.L. */
+            text-transform: uppercase; 
         }
         .logo .logo-subtext {
             font-size: 0.75rem;
@@ -200,7 +200,7 @@
             padding: 10px;
             z-index: 1005; 
             position: absolute; 
-            right: 20px; /* Adjusted if nav padding changes significantly */
+            right: 20px; 
             top: 50%;
             transform: translateY(-50%);
         }
@@ -594,6 +594,8 @@
             color: var(--accent-blue-primary);
             margin-bottom: 12px;
             font-weight: 700;
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
         .product-intro-content .product-subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
@@ -606,6 +608,8 @@
             color: var(--text-dark-secondary);
             line-height: 1.7;
             margin-bottom: 25px;
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
 
         .product-intro-gallery-wrapper {
@@ -966,7 +970,11 @@
                 word-break: break-word; 
                 overflow-wrap: break-word;
             }
-            .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
+            .product-header-area .product-subtitle { 
+                font-size: clamp(1rem, 3vw, 1.1rem); 
+                word-break: break-word; 
+                overflow-wrap: break-word;
+            }
             .product-header-area .product-description { 
                 font-size: 0.9rem; 
                 word-break: break-word; 
