@@ -5,29 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bonfatti S.r.l. progetta e realizza nastri trasportatori modulari e soluzioni innovative per l'automazione industriale. Scopri i nostri prodotti e vantaggi.">
     <title>NASTRI TRASPORTATORI MODULARI - Bonfatti S.r.l.</title>
-    <!-- 
-      SEO: Esempio di Dati Strutturati JSON-LD. 
-      Sostituisci i placeholder con i tuoi dati reali.
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "BONFATTI S.R.L.",
-      "url": "https://www.bonfattisrl.com", // Esempio URL
-      "logo": "https://www.bonfattisrl.com/images/logo.png", // Esempio URL logo
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+39-059-859-921",
-        "contactType": "Servizio Clienti",
-        "areaServed": "IT",
-        "availableLanguage": ["Italian", "English"]
-      },
-      "sameAs": [ 
-        "https://www.linkedin.com/company/bonfatti-srl/" // Esempio
-      ]
-    }
-    </script>
-    -->
     <style>
         * {
             margin: 0;
@@ -36,20 +13,20 @@
         }
 
         :root {
-            --bg-light-primary: #f7f9fc; /* Sfondo principale ancora più chiaro, quasi bianco neve */
+            --bg-light-primary: #f7f9fc;
             --bg-light-secondary: #ffffff; 
-            --bg-light-section-alt: #f0f4f8; /* Grigio molto chiaro per sezioni alternate */
+            --bg-light-section-alt: #f0f4f8;
             
-            --accent-blue-primary: #0077FF; /* Un blu più vibrante e moderno */
-            --accent-blue-secondary: #00C9FF; /* Un ciano più acceso */
+            --accent-blue-primary: #0077FF;
+            --accent-blue-secondary: #00C9FF;
             --accent-blue-primary-rgb: 0, 119, 255;
             --accent-blue-secondary-rgb: 0, 201, 255;
 
-            --text-dark-primary: #1a202c;  /* Grigio scuro quasi nero per testo principale (Tailwind gray-800) */
-            --text-dark-secondary: #4a5568; /* Grigio medio-scuro per testo secondario (Tailwind gray-600) */
+            --text-dark-primary: #1a202c;
+            --text-dark-secondary: #4a5568;
             --text-on-accent-light: #ffffff;
 
-            --border-light: #e2e8f0; /* Bordo più sottile (Tailwind gray-300) */
+            --border-light: #e2e8f0;
             --border-light-accent: rgba(var(--accent-blue-primary-rgb), 0.4);
 
             --shadow-soft: rgba(0, 0, 0, 0.04); 
@@ -63,13 +40,12 @@
             background: var(--bg-light-primary);
             color: var(--text-dark-primary);
             overflow-x: hidden;
-            line-height: 1.7; /* Aumentata leggermente per più respiro */
+            line-height: 1.7;
         }
         body.menu-open {
             overflow: hidden; 
         }
 
-        /* Animated Background - Subtle Grid */
         .bg-animation {
             position: fixed;
             width: 100%;
@@ -89,7 +65,7 @@
             background-image:
                 linear-gradient(rgba(var(--accent-blue-primary-rgb), 0.03) 0.5px, transparent 0.5px), 
                 linear-gradient(90deg, rgba(var(--accent-blue-primary-rgb), 0.03) 0.5px, transparent 0.5px);
-            background-size: 60px 60px; /* Griglia più piccola e fitta */
+            background-size: 60px 60px;
             z-index: -1; 
             animation: gridMoveLight 35s linear infinite;
             opacity: 0.7; 
@@ -100,7 +76,6 @@
             100% { background-position: 60px 60px; }
         }
         
-        /* Navigation */
         nav {
             position: fixed;
             width: 100%;
@@ -150,7 +125,6 @@
             transform: scale(1.03); 
         }
 
-
         .nav-links {
             display: flex;
             gap: 30px; 
@@ -192,7 +166,6 @@
             transform: scaleX(1);
         }
 
-        /* Mobile Menu Styles */
         #mobile-menu-toggle {
             display: none; 
             background: none;
@@ -221,7 +194,6 @@
         #mobile-menu-toggle.active .hamburger-icon span:nth-child(3) {
             transform: translateY(-7.5px) rotate(-45deg);
         }
-
 
         #mobile-menu {
             position: absolute; 
@@ -267,8 +239,6 @@
             background-color: var(--bg-light-section-alt);
         }
 
-
-        /* Hero Section */
         .hero {
             min-height: 100vh; 
             display: flex;
@@ -318,7 +288,6 @@
             -webkit-text-fill-color: transparent;
             -moz-text-fill-color: transparent;
         }
-
 
         .hero-subtitle {
             font-size: clamp(1.15rem, 2.8vw, 1.5rem); 
@@ -392,8 +361,6 @@
             50% { opacity: 1; transform: scaleY(1.15); }
         }
 
-
-        /* Sections Base */
         main { 
             display: block; 
         }
@@ -406,7 +373,6 @@
         section:nth-of-type(even) { 
             background-color: var(--bg-light-section-alt); 
         }
-
 
         .section-header {
             text-align: center;
@@ -442,7 +408,6 @@
             line-height: 1.65;
         }
         
-        /* Counter Stats Section */
         .counter-stats {
             padding: 70px 40px;
             background: var(--bg-light-section-alt); 
@@ -483,8 +448,6 @@
             letter-spacing: 1px;
         }
 
-
-        /* Features Grid */
         .features {
             padding-top: 100px; padding-bottom: 100px; 
         }
@@ -529,7 +492,7 @@
 
         .feature-card:hover {
             transform: translateY(-6px); 
-            box-shadow: 0 10px 25px var(--shadow-light-medium); 
+            box-shadow: 0 10px 25px var(--shadow-medium); 
         }
 
         .feature-card:hover::after {
@@ -548,7 +511,6 @@
             line-height: 1.6;
         }
 
-        /* Products Section - Restructured */
         .products { 
             position: relative; 
             padding-bottom: 0; 
@@ -571,11 +533,36 @@
         
         .product-introduction-block { 
             margin-bottom: 40px; 
-            padding: 20px;
-            background: var(--bg-light-secondary);
-            border-radius: 12px;
-            box-shadow: 0 6px 20px var(--shadow-soft);
+            padding: 30px 0;
+            background: transparent;
             text-align: left; 
+            position: relative;
+        }
+        
+        .product-introduction-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-blue-primary), transparent);
+            opacity: 0;
+            animation: slideInLine 1.5s ease-out 0.5s forwards;
+        }
+        
+        @keyframes slideInLine {
+            0% { 
+                transform: scaleX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% { 
+                transform: scaleX(1);
+                opacity: 0.6;
+            }
         }
        
         .product-intro-content .product-title {
@@ -610,6 +597,21 @@
         }
         .product-intro-content .product-cta {
             margin-top: 10px; 
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--accent-blue-primary);
+            color: var(--text-on-accent-light);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .product-intro-content .product-cta:hover {
+            background: var(--accent-blue-secondary);
+            transform: translateY(-2px);
         }
 
         .product-services-block {
@@ -662,24 +664,45 @@
         .product-variants-grid {
             display: grid;
             gap: 25px;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 300px)); /* Adjusted for more consistent width */
+            grid-template-columns: repeat(auto-fill, minmax(270px, 300px));
             justify-content: center; 
         }
         
         .product-variant-block {
-            background: var(--bg-light-secondary); 
-            border: 1px solid var(--border-light);
-            border-radius: 10px;
-            padding: 20px;
+            background: transparent; 
+            border: none;
+            border-radius: 15px;
+            padding: 25px;
             text-align: left; 
-            box-shadow: 0 4px 15px var(--shadow-soft);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
             display: flex; 
-            flex-direction: column; 
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .product-variant-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border: 1px solid rgba(var(--accent-blue-primary-rgb), 0.1);
+            border-radius: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .product-variant-block:hover::before {
+            opacity: 1;
+        }
+        
         .product-variant-block:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 10px 25px var(--shadow-medium);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(var(--accent-blue-primary-rgb), 0.15);
         }
         .product-variant-block img {
             width: 100%;
@@ -712,7 +735,6 @@
             flex-grow: 1; 
         }
         
-        /* Contact Section */
         .contact {
             background: var(--bg-light-section-alt); 
             text-align: center;
@@ -727,6 +749,7 @@
             max-height: 50vh; 
             border-radius: 8px; 
             border: 1px solid var(--border-light);
+            position: relative;
         }
 
         .map-container-constrained iframe {
@@ -780,8 +803,6 @@
             text-decoration: underline;
         }
 
-
-        /* Footer */
         footer {
             padding: 30px 40px;
             background: #e9ecef; 
@@ -790,7 +811,6 @@
         }
         footer p { color: var(--text-dark-secondary); font-size: 0.8rem; }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-links { display: none; }
@@ -811,8 +831,6 @@
                 text-align: right;
             }
             .logo .logo-main-text { font-size: 1.2rem; }
-            .logo .logo-subtext { font-size: 0.65rem;}
-
 
             .hero { padding: 80px 20px 30px; }
             .hero-title { font-size: clamp(2.2rem, 10vw, 4.0rem); } 
@@ -821,10 +839,6 @@
             .product-introduction-block { 
                 padding: 20px; 
             }
-           
-            .product-main-image-display { height: 280px; } 
-            .product-thumbnail-selector { justify-content: flex-start; } 
-            .thumbnail { width: 70px; height: 50px; }
 
             .product-variants-grid { 
                 grid-template-columns: 1fr; 
@@ -837,12 +851,6 @@
                 }
             }
 
-
-            .product-entry { 
-                padding: 20px; 
-                margin-bottom: 60px; 
-            }
-            .product-header-area .product-title,
             .product-intro-content .product-title { 
                 font-size: clamp(1.3rem, 4.5vw, 1.7rem); 
                 word-break: break-word; 
@@ -851,7 +859,6 @@
                 -ms-hyphens: auto;
                 hyphens: auto;
             }
-            .product-header-area .product-subtitle,
             .product-intro-content .product-subtitle { 
                 font-size: clamp(0.9rem, 3vw, 1rem); 
                 word-break: break-word; 
@@ -860,7 +867,6 @@
                 -ms-hyphens: auto;
                 hyphens: auto;
             }
-            .product-header-area .product-description,
             .product-intro-content .product-description { 
                 font-size: 0.85rem; 
                 word-break: break-word; 
@@ -870,14 +876,6 @@
                 hyphens: auto;
             }
             
-            .product-details-area { grid-template-columns: 1fr; } 
-            .product-features li, .spec-list li {
-                 word-break: break-word; 
-                 overflow-wrap: break-word;
-                 -webkit-hyphens: auto;
-                 -ms-hyphens: auto;
-                 hyphens: auto;
-            }
             .product-variant-block h4, .product-variant-block p {
                 word-break: break-word; 
                 overflow-wrap: break-word;
@@ -888,7 +886,6 @@
              .product-services-block h4 { font-size: 1rem; }
              .product-services-block h5 { font-size: 0.9rem; }
              .product-services-block p { font-size: 0.85rem; }
-
 
             .features-grid { grid-template-columns: 1fr; }
             section { padding: 70px 20px; } 
@@ -919,7 +916,7 @@
 <body>
     <div class="bg-animation">
         <div class="grid-overlay"></div>
-        </div>
+    </div>
 
     <nav>
         <div class="nav-container">
@@ -1060,7 +1057,7 @@
                             <h4>LA FORNITURA DEL TRASPORTO MODULARE VIENE INTEGRATA CON I SEGUENTI INDISPENSABILI SERVIZI</h4>
                             <div>
                                 <h5>STUDIO</h5>
-                                <p>L’ufficio tecnico della Bonfatti srl realizza su misura alle richieste del cliente il layout, integrando i propri prodotti modulari con le macchine del cliente per una perfetta riuscita del progetto.</p>
+                                <p>L'ufficio tecnico della Bonfatti srl realizza su misura alle richieste del cliente il layout, integrando i propri prodotti modulari con le macchine del cliente per una perfetta riuscita del progetto.</p>
                             </div>
                             <div>
                                 <h5>GESTIONE</h5>
@@ -1076,97 +1073,82 @@
                 </div>
                 <div class="product-variants-grid">
                     <div class="product-variant-block">
-                        <img src="images/modulare01.jpg" alt="Trasportatori Modulari Rettilinei" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Rettilinei';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Rettilinei" alt="Trasportatori Modulari Rettilinei" loading="lazy">
                         <h4>Trasportatori Modulari Rettilinei</h4>
-                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Sistema di trasporto modulare studiato per una notevole capacità di carico, il trasporto modulare rettilineo si distingue per la sua robustezza e capacità di gestire carichi pesanti. Questo tipo di nastro è progettato per applicazioni in cui è necessario un movimento lineare e continuo, con un'alta efficienza. La sua struttura modulare consente una facile personalizzazione e manutenzione. Disponibile in versione mono o multivia.</p>
+                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Sistema di trasporto modulare studiato per una notevole capacità di carico, il trasporto modulare rettilineo si distingue per la sua robustezza e capacità di gestire carichi pesanti.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/modulare02.jpg" alt="Trasportatori Modulari Curvilinei" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Curvilinei';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Curvilinei" alt="Trasportatori Modulari Curvilinei" loading="lazy">
                         <h4>Trasportatori Modulari Curvilinei</h4>
-                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Tipologia di nastri facilmente installabile in tutti gli spazi produttivi, il trasporto modulare curvilineo è progettato per garantire alta velocità di movimentazione anche in spazi ristretti. La sua capacità di adattarsi a curve e angolazioni diverse lo rende ideale per linee di produzione che richiedono cambi di direzione frequenti, senza compromettere l'efficienza del trasporto. Disponibile in versione mono o multivia.</p>
+                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Tipologia di nastri facilmente installabile in tutti gli spazi produttivi, il trasporto modulare curvilineo è progettato per garantire alta velocità di movimentazione anche in spazi ristretti.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/modulare03.jpg" alt="Trasportatori Modulari ad Alta Velocità" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Alta+Velocità';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Alta+Velocità" alt="Trasportatori Modulari ad Alta Velocità" loading="lazy">
                         <h4>Trasportatori Modulari ad Alta Velocità</h4>
-                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Il trasportatore modulare ad alta velocità è progettato per garantire un'efficienza superiore nelle operazioni di trasporto sollecitato da condizioni estreme. Questo sistema è ideale per ambienti che richiedono operazioni rapide e continue, come nelle linee di produzione ad alta intensità. La gamma comprende traini motorizzati -folli-curvilinei con varie gradazioni-deviazioni a 90°-allineatori-multivie-tavoli di accumulo ordinato.</p>
+                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Il trasportatore modulare ad alta velocità è progettato per garantire un'efficienza superiore nelle operazioni di trasporto sollecitato da condizioni estreme.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Frizionati+Scatole" alt="Trasportatori Modulari Frizionati per Scatole" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Frizionati+Scatole" alt="Trasportatori Modulari Frizionati per Scatole" loading="lazy">
                         <h4>Trasportatori Modulari Frizionati per Scatole</h4>
-                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Soluzione di movimentazione caratterizzata da tappeto modulare con possibilità di utilizzo di varie tipologie di catena table top. La gamma comprende traini motorizzati -folli-curvilinei con varie gradazioni-deviazioni a 90°-ruotatori scatole. Il trasporto modulare per scatole è integrato con guide di contenimento adatte a svariate tipologie di prodotti. Questo sistema offre un'elevata affidabilità e una lunga durata, grazie alla robustezza del telaio e componenti di scorrimento catene ad alta scorrevolezza.</p>
+                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Soluzione di movimentazione caratterizzata da tappeto modulare con possibilità di utilizzo di varie tipologie di catena table top.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Gommati" alt="Trasportatori Modulari Gommati" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Gommati" alt="Trasportatori Modulari Gommati" loading="lazy">
                         <h4>Trasportatori Modulari Gommati</h4>
-                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Sistema di trasporto studiato per movimenti in salita o in discesa, il trasporto modulare gommato offre una soluzione sicura ed efficiente. La superficie gommata garantisce una buona aderenza, riducendo il rischio di slittamenti. È particolarmente adatto per il trasporto di materiali su piani inclinati. Questo sistema è ideale per ambienti che richiedono elevata stabilità e sicurezza durante il movimento dei carichi.</p>
+                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Sistema di trasporto studiato per movimenti in salita o in discesa, il trasporto modulare gommato offre una soluzione sicura ed efficiente.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Per+Pallet" alt="Trasportatori Modulari per Pallet" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Per+Pallet" alt="Trasportatori Modulari per Pallet" loading="lazy">
                         <h4>Trasportatori Modulari per Pallet</h4>
-                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Soluzione di movimentazione caratterizzata da trasporto a catenaria motorizzata-trasporto con rulli motorizzati o folli. Sistema modulare modulare espandibile da layout. Il trasporto modulare per pallet ha come base di progetto la robustezza richiesta dal tipo di ambiente in cui viene utilizzato, adatto a carichi pesanti e instabili,La gamma comprende versioni rettilinee-deviazioni ortogonali-variazione di quota-impilatori. Realizzati in versione verniciata o acciaio inox.</p>
+                        <p>Progettati per trasportare nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Soluzione di movimentazione caratterizzata da trasporto a catenaria motorizzata-trasporto con rulli motorizzati o folli.</p>
                     </div>
                 </div>
             </article>
 
             <article class="product-group">
-                <div class="product-introduction-block product-introduction-block--align-image-right">
+                <div class="product-introduction-block">
                      <div class="product-intro-content">
                         <h3 class="product-title">FAST SIZE CHANGE (FSC)</h3>
                         <p class="product-subtitle">Guida motorizzata realizzata per tutti i modelli di nastri trasportatori</p>
                         <p class="product-description">
-                            La guida FSC rivoluziona il cambio formato, eliminando i tempi morti. Un singolo operatore gestisce il tutto in modo rapido, preciso e sicuro, massimizzando la produttività della linea
-                            progettata per tutti gli impianti di confezionamento. Viene fornita come integrazione su impianti del cliente o completa del proprio nastro trasportatore.
-                            Il mercato attuale richiede frequenti cambi di formato penalizzando la resa delle linee di confezionamento con aumento dei costi di produzione. 
-                            La guida motorizzata FSC soddisfa la richiesta di rapidi e frequenti cambi di formato annullando i tempi di fermo, per la regolazione manuale delle map-container-constraine.
-                            La soluzione FSC consente di gestire con un solo operatore in modo veloce e preciso, la dimensione del canale di movimentazione nel quale transitano i prodotti. 
-                            La gestione del canale avviene in modo intuitivo e in piena sicurezza
-                            Le dimensoni raggiungibili vengono concordate con il cliente al fine di rendere l'esperienza produttiva più attenta possibile al prodotto movimentato.         
+                            La guida FSC rivoluziona il cambio formato, eliminando i tempi morti. Un singolo operatore gestisce il tutto in modo rapido, preciso e sicuro, massimizzando la produttività della linea progettata per tutti gli impianti di confezionamento. Viene fornita come integrazione su impianti del cliente o completa del proprio nastro trasportatore.
                         </p>
                          <a href="#" class="product-cta interactive-sound">Dettagli Sistema FSC</a>
                     </div>
-            
                 </div>
                  <div class="product-variants-grid">
                     <div class="product-variant-block">
-                        <img src="images/Fsc01.jpg" alt="Variante FSC con Servomotore" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.1';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Servomotore" alt="Variante FSC con Servomotore" loading="lazy">
                         <h4>Automazione con Servomotore</h4>
                         <p>Massima precisione e velocità nel cambio formato grazie al controllo servoassistito.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/Fsc02.jpg" alt="Variante FSC Comando Manuale" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.2';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Comando+Manuale" alt="Variante FSC Comando Manuale" loading="lazy">
                         <h4>Comando Manuale Intuitivo</h4>
                         <p>Soluzione efficace per una gestione semplificata del cambio formato da parte dell'operatore.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/Fsc03.jpg" alt="Integrazione FSC su Linee Esistenti" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.3';">
-                        <h4>Integrazione Flessibile</h4>
-                        <p>Il sistema FSC si adatta facilmente a impianti esistenti, ottimizzando linee di confezionamento multiformato.</p>
-                    </div>
-                     <div class="product-variant-block">
-                        <img src="images/Fsc04.jpg" alt="Integrazione FSC su Linee Esistenti" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.3';">
-                        <h4>Integrazione Flessibile</h4>
-                        <p>Il sistema FSC si adatta facilmente a impianti esistenti, ottimizzando linee di confezionamento multiformato.</p>
-                    </div>
-                     <div class="product-variant-block">
-                        <img src="images/Fsc05.jpg" alt="Integrazione FSC su Linee Esistenti" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.3';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Integrazione" alt="Integrazione FSC su Linee Esistenti" loading="lazy">
                         <h4>Integrazione Flessibile</h4>
                         <p>Il sistema FSC si adatta facilmente a impianti esistenti, ottimizzando linee di confezionamento multiformato.</p>
                     </div>
                 </div>
             </article>
+
             <article class="product-group">
                 <div class="product-introduction-block">
                     <div class="product-intro-content">
                         <h3 class="product-title">NASTRI TRASPORTATORI MODULARI IN ACCIAIO INOX JUST IN TIME</h3>
-                        <p class="product-subtitle">Tutto dal kit modulare per l’automazione</p>
+                        <p class="product-subtitle">Tutto dal kit modulare per l'automazione</p>
                         <p class="product-description">
-                            In qualità di produttore di nastri trasportatori, la Bonfatti s.r.l. combina i più alti standard tecnici con il miglior rapporto qualità-prezzo nella progettazione e nell’ assemblaggio. Con il configuratore JUST IN TIME puoi configurare tu stesso il Tuo nastro trasportatore. In esclusiva ora disponibili i kit per realizzare i tuoi progetti JUST IN TIME con componenti totalmente in acciaio inox AISI 304. Progettati per utilizzo nei settori: Imbottigliamento- Cura della Persona e della Casa -Farmaceutico -Ortofrutta-Cibo per Animali -Surgelato-Lattiero Caseario-Conserviero. Prodotto di alta qualità realizzato in kit permette di risolvere velocemente le esigenze della tua azienda riducendo costi con tempi di realizzazione brevi.
+                            In qualità di produttore di nastri trasportatori, la Bonfatti s.r.l. combina i più alti standard tecnici con il miglior rapporto qualità-prezzo nella progettazione e nell' assemblaggio. Con il configuratore JUST IN TIME puoi configurare tu stesso il Tuo nastro trasportatore. In esclusiva ora disponibili i kit per realizzare i tuoi progetti JUST IN TIME con componenti totalmente in acciaio inox AISI 304.
                         </p>
-                        <div class="product-services-block"> <h4>Caratteristiche Principali del Sistema JIT:</h4>
+                        <div class="product-services-block"> 
+                            <h4>Caratteristiche Principali del Sistema JIT:</h4>
                             <ul>
                                 <li>TEMPI DI CONSEGNA ESTREMAMENTE BREVI: Tempi per predisporre il tuo materiale 5 giorni JUST IN TIME.</li>
                                 <li>PERSONALIZZAZIONE DELLE DIMENSIONI</li>
-                                <li>LIBERTÀ DI SCELTA DELL’AZIONAMENTO DI COMANDO</li>
+                                <li>LIBERTÀ DI SCELTA DELL'AZIONAMENTO DI COMANDO</li>
                                 <li>VELOCITÀ DEL TRASPORTATORE</li>
                                 <li>VARIANTI DEL RINVIO E TRAINO</li>
                                 <li>SCELTA LIBERA DEL TIPO DI TAPPETO</li>
@@ -1180,7 +1162,7 @@
                                 <li>NASTRO TRASPORTATORE A TAPPETO</li>
                                 <li>NASTRO TRASPORTATORE A CATENA MODULARE</li>
                                 <li>RULLIERE MOTORIZZATE RETTILINEE -CURVILINEE</li>
-                                <li>RULLIERE A GRAVITA’ RETTILINEE -CURVILINEE</li>
+                                <li>RULLIERE A GRAVITA' RETTILINEE -CURVILINEE</li>
                                 <li>COMPONENTI ACCESSORI PER NASTRI TRASPORTATORI</li>
                                 <li>TAVOLI DI RACCOLTA</li>
                             </ul>
@@ -1188,46 +1170,46 @@
                          <a href="#" class="product-cta interactive-sound">Configura il Tuo Nastro JIT</a>
                     </div>
                 </div>
-                 <div class="product-variants-grid grid-for-8"> 
+                 <div class="product-variants-grid"> 
                     <div class="product-variant-block">
-                        <img src="images/jit01.jpg" alt="Nastro trasportatore a tappeto JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Tappeto+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Tappeto+JIT" alt="Nastro trasportatore a tappeto JIT" loading="lazy">
                         <h4>Nastro trasportatore a tappeto</h4>
                         <p>Tempi di consegna rapidi. Tempi di realizzazione del suo nastro trasportatore: Cinque giorni lavorativi. Consegne Just-In-Time.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/jit02.jpg" alt="Nastro trasportatore a catena modulare per scatole JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Catena+Scatole+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Catena+Scatole+JIT" alt="Nastro trasportatore a catena modulare per scatole JIT" loading="lazy">
                         <h4>Nastro trasportatore a catena modulare per scatole</h4>
-                        <p>Libera scelta della larghezza del telaio tra 40 e 110 mm. Lunghezza del nastro trasportatore liberamente selezionabile fino a 12 m, lunghezze superiori su richiesta. A richiesta sottostruttura premontata e regolabile in altezza.</p>
+                        <p>Libera scelta della larghezza del telaio tra 40 e 110 mm. Lunghezza del nastro trasportatore liberamente selezionabile fino a 12 m, lunghezze superiori su richiesta.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/jit03.jpg" alt="Nastro trasportatore a catena modulare per contenitori JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Catena+Contenitori+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Catena+Contenitori+JIT" alt="Nastro trasportatore a catena modulare per contenitori JIT" loading="lazy">
                         <h4>Nastro trasportatore a catena modulare per contenitori</h4>
-                        <p>Flessibilità del tipo e della posizione dell’azionamento. Libera scelta delle tipologie d’azionamento. Azionamento liberamente posizionabile (a lato, inferiore, centrale).</p>
+                        <p>Flessibilità del tipo e della posizione dell'azionamento. Libera scelta delle tipologie d'azionamento. Azionamento liberamente posizionabile.</p>
                     </div>
                      <div class="product-variant-block">
-                        <img src="images/jit04.jpg" alt="Curve continue con vari angoli di inclinazione JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Curve+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Curve+JIT" alt="Curve continue con vari angoli di inclinazione JIT" loading="lazy">
                         <h4>Curve continue con vari angoli di inclinazione</h4>
                         <p>Adattamento ottimale della velocità del nastro come da specifiche richieste. Regolatore di velocità opzionale.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/jit05.jpg" alt="Rulliere motorizzate e a gravità JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Rulliere+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Rulliere+JIT" alt="Rulliere motorizzate e a gravità JIT" loading="lazy">
                         <h4>Rulliere motorizzate / Rulliere a gravità rettilinee curvilinee</h4>
                         <p>Dimensionamento dei rulli a seconda della grandezza del nastro. Punta di penna ⌀ 16 per traslazione piccoli particolari.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/jit06.jpg" alt="Sponde di guida JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Sponde+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Sponde+JIT" alt="Sponde di guida JIT" loading="lazy">
                         <h4>Sponde di guida</h4>
-                        <p>Selezione personalizzata dei tappeti: tappeto per funzionamento ad accumulo, per applicazioni in salita, per applicazioni specifiche (p. es. facchini).</p>
+                        <p>Selezione personalizzata dei tappeti: tappeto per funzionamento ad accumulo, per applicazioni in salita, per applicazioni specifiche.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/jit07.jpg" alt="Componenti accessori automazione linee JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Accessori+Linee+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Accessori+Linee+JIT" alt="Componenti accessori automazione linee JIT" loading="lazy">
                         <h4>Componenti accessori automazione linee</h4>
-                        <p>Trasportare con sistema. Completamente compatibile con tutta la gamma di profilo. Cava unica da 14 mm. Cave libere sui due lati lunghi del nastro per ampliamenti (p. es. fermi).</p>
+                        <p>Trasportare con sistema. Completamente compatibile con tutta la gamma di profilo. Cava unica da 14 mm. Cave libere sui due lati lunghi del nastro per ampliamenti.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="images/jit08.jpg" alt="Componenti accessori per nastri modulari JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Accessori+Nastri+JIT';">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Accessori+Nastri+JIT" alt="Componenti accessori per nastri modulari JIT" loading="lazy">
                         <h4>Componenti accessori per nastri modulari</h4>
-                        <p>Guadagnare tempo, ridurre costi. Tempi di consegna straordinariamente brevi. Configurazione veloce di nastri trasportatori su misura (webshop). Ogni nastro trasportatore è già montato e collaudato. Eccellente rapporto qualità/prezzo. Sicurezza: Protezione dita autoregolante tra rullo e lamiera di scorrimento. Coperchio con finestra trasparente per il controllo visivo della cinghia. Nastri trasportatori certificati CE con documentazione completa.</p>
+                        <p>Guadagnare tempo, ridurre costi. Tempi di consegna straordinariamente brevi. Configurazione veloce di nastri trasportatori su misura. Ogni nastro trasportatore è già montato e collaudato.</p>
                     </div>
                 </div>
             </article>
@@ -1255,13 +1237,13 @@
             <p><strong>Indirizzo:</strong> Via Berlinguer 16, 41019 Soliera (Modena)</p>
             <p><strong>Email:</strong> <a href="mailto:info@bonfattisrl.com">info@bonfattisrl.com</a></p>
             
-            
             <h4>Orari</h4>
             <p>Lunedì – Venerdì</p>
             <p>08:30 – 18:00</p>
         </div>
     </section>
 </main>
+
     <footer>
         <p>© 2024 Bonfatti S.r.l. | Tutti i diritti riservati | P.IVA 03676200367</p>
         <p><strong>Indirizzo:</strong> Via Berlinguer 16, 41019 Soliera (Modena)</p>
@@ -1271,7 +1253,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
             const navElement = document.querySelector('nav');
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -1303,7 +1284,6 @@
                 });
             }
 
-
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -1326,10 +1306,8 @@
                         if(entry.target.classList.contains('product-group')) { 
                             const productGroups = Array.from(entry.target.parentNode.querySelectorAll('.product-group'));
                             const index = productGroups.indexOf(entry.target);
-                            const isEven = index % 2 === 0; 
                             
                             if (window.innerWidth > 768) {
-                               // No alternating slide for this layout
                                entry.target.classList.add('slide-left');
                             } else { 
                                 entry.target.classList.add('slide-left');
@@ -1344,6 +1322,7 @@
                     }
                 });
             }, observerOptions);
+            
             document.querySelectorAll('.section-header, .feature-card, .product-group, .contact-item, .hero-subtitle, .hero-cta, .scroll-indicator, .contact-details-text-container, .counter-item').forEach(el => observer.observe(el)); 
             
             const animateCounter = (element) => {
@@ -1371,8 +1350,6 @@
                 requestAnimationFrame(step);
             };
             
-            // Image gallery script removed as per new design
-
             let audioCtx;
             let hoverSound;
             try {
