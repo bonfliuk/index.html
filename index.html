@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bonfatti S.r.l. progetta e realizza nastri trasportatori modulari e soluzioni innovative per l'automazione industriale. Scopri i nostri prodotti e vantaggi.">
     <title>NASTRI TRASPORTATORI MODULARI - Bonfatti S.r.l.</title>
+    <!-- 
+      SEO: Esempio di Dati Strutturati JSON-LD. 
+      Sostituisci i placeholder con i tuoi dati reali.
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BONFATTI S.R.L.",
+      "url": "https://www.bonfattisrl.com", // Esempio URL
+      "logo": "https://www.bonfattisrl.com/images/logo.png", // Esempio URL logo
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+39-059-859-921",
+        "contactType": "Servizio Clienti",
+        "areaServed": "IT",
+        "availableLanguage": ["Italian", "English"]
+      },
+      "sameAs": [ 
+        "https://www.linkedin.com/company/bonfatti-srl/" // Esempio
+      ]
+    }
+    </script>
+    -->
     <style>
         * {
             margin: 0;
@@ -12,28 +36,31 @@
         }
 
         :root {
-            --bg-light: #f4f8fa; /* Sfondo principale molto chiaro, quasi bianco */
-            --bg-light-card: #ffffff; /* Sfondo per le card */
-            --bg-light-section-alt: #e9edf0; /* Sfondo alternativo per sezioni */
+            --bg-light-primary: #f4f8fa; 
+            --bg-light-secondary: #ffffff; 
+            --bg-light-section-alt: #e9edf0; 
             
-            --accent-blue-primary: #007bff; /* Blu primario tecnologico */
-            --accent-blue-secondary: #00b8d4; /* Ciano/Blu secondario */
+            --accent-blue-primary: #007bff; 
+            --accent-blue-secondary: #00b8d4; 
             --accent-blue-primary-rgb: 0, 123, 255;
             --accent-blue-secondary-rgb: 0, 184, 212;
 
-            --text-primary-light: #212529;  /* Testo principale scuro */
-            --text-secondary-light: #6c757d; /* Testo secondario grigio medio */
+            --text-dark-primary: #212529;  
+            --text-dark-secondary: #6c757d; 
             --text-on-accent-light: #ffffff;
 
-            --border-light: #dee2e6; /* Bordo sottile e chiaro */
-            --shadow-light-soft: rgba(0, 0, 0, 0.05); 
-            --shadow-light-medium: rgba(0, 0, 0, 0.1);
+            --border-light: #dee2e6; 
+            --border-light-accent: rgba(var(--accent-blue-primary-rgb), 0.3);
+
+            --shadow-soft: rgba(0, 0, 0, 0.05); 
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+            --shadow-glow-effect-light: 0 0 15px rgba(var(--accent-blue-primary-rgb), 0.15), 0 0 30px rgba(var(--accent-blue-secondary-rgb), 0.1);
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg-light);
-            color: var(--text-primary-light);
+            background: var(--bg-light-primary);
+            color: var(--text-dark-primary);
             overflow-x: hidden;
             line-height: 1.65; 
         }
@@ -59,26 +86,26 @@
             top: 0;
             left: 0;
             background-image:
-                linear-gradient(rgba(0, 123, 255, 0.03) 1px, transparent 1px), 
-                linear-gradient(90deg, rgba(0, 123, 255, 0.03) 1px, transparent 1px);
-            background-size: 80px 80px; 
+                linear-gradient(rgba(var(--accent-blue-primary-rgb), 0.04) 1px, transparent 1px), 
+                linear-gradient(90deg, rgba(var(--accent-blue-primary-rgb), 0.04) 1px, transparent 1px);
+            background-size: 70px 70px; 
             z-index: -1; 
             animation: gridMoveLight 30s linear infinite;
-            opacity: 0.5; 
+            opacity: 0.6; 
         }
 
         @keyframes gridMoveLight {
             0% { background-position: 0 0; }
-            100% { background-position: 80px 80px; }
+            100% { background-position: 70px 70px; }
         }
         
         /* Navigation */
         nav {
             position: fixed;
             width: 100%;
-            padding: 18px 40px; 
+            padding: 15px 40px; 
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.8); 
+            background: rgba(255, 255, 255, 0.85); 
             backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
             transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
@@ -86,48 +113,56 @@
         }
 
         nav.scrolled {
-            padding: 12px 40px;
-            background: rgba(255, 255, 255, 0.95); 
-            box-shadow: 0 3px 10px var(--shadow-light-soft); 
+            padding: 10px 40px; 
+            background: rgba(255, 255, 255, 0.97); 
+            box-shadow: 0 3px 10px var(--shadow-soft); 
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1000px; 
             margin: 0 auto;
             display: flex;
             align-items: center;
             position: relative; 
-            justify-content: center; 
+            justify-content: space-between; 
         }
 
         .logo { 
-            position: absolute; 
-            left: 40px; 
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem; 
-            font-weight: 700;
-            color: var(--text-primary-light);
             text-decoration: none;
             transition: color 0.3s ease, transform 0.3s ease;
             z-index: 1002; 
+            text-align: right; 
+            order: 2; 
+        }
+        .logo .logo-main-text {
+            font-size: 1.3rem; 
+            font-weight: 700;
+            color: var(--text-dark-primary);
+            display: block; 
+            text-transform: uppercase; 
         }
         
-        .logo:hover {
+        .logo:hover .logo-main-text {
             color: var(--accent-blue-primary);
-            transform: translateY(-50%) scale(1.03); 
         }
+         .logo:hover { 
+            transform: scale(1.03); 
+        }
+
 
         .nav-links {
             display: flex;
-            gap: 45px; 
+            gap: 30px; 
             list-style: none;
+            padding: 0; 
+            order: 1; 
+            margin-right: auto; 
         }
 
         .nav-links a {
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             text-decoration: none;
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             font-weight: 500; 
             transition: color 0.3s ease;
             position: relative;
@@ -164,16 +199,13 @@
             cursor: pointer;
             padding: 10px;
             z-index: 1005; 
-            position: absolute; 
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            order: 1; 
         }
         #mobile-menu-toggle .hamburger-icon span {
             display: block;
             width: 25px;
             height: 2.5px; 
-            background-color: var(--text-primary-light);
+            background-color: var(--text-dark-primary);
             margin: 5px 0;
             transition: all 0.3s ease-in-out;
             border-radius: 3px;
@@ -191,47 +223,47 @@
 
 
         #mobile-menu {
-            position: fixed;
-            top: 0;
+            position: absolute; /* Changed from fixed to be relative to nav */
+            top: 100%; /* Position below the navbar */
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(244, 248, 250, 0.98); 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1001; 
+            right: 0; /* Span full width of nav container */
+            width: auto; /* Let it take width of parent or content */
+            background: var(--bg-light-secondary); 
+            box-shadow: 0 8px 16px var(--shadow-medium);
+            z-index: 999; /* Below nav but above content */
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-15px);
-            transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            max-height: 0; /* For dropdown animation */
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease-out, visibility 0.3s ease-out;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
         }
         #mobile-menu.open {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            max-height: 500px; /* Adjust as needed to fit all items */
         }
         #mobile-menu ul {
             list-style: none;
-            padding: 0;
-            text-align: center;
+            padding: 10px 0; /* Padding inside the dropdown */
+            text-align: left; /* Align text left */
         }
         #mobile-menu li {
-            margin: 20px 0;
+            margin: 0;
         }
         #mobile-menu a {
-            color: var(--text-primary-light);
-            font-size: 1.4rem; 
+            color: var(--text-dark-primary);
+            font-size: 1rem; /* Adjusted font size */
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            padding: 10px 20px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            padding: 12px 25px; /* Padding for links */
+            display: block; /* Make links take full width */
         }
         #mobile-menu a:hover {
             color: var(--accent-blue-primary);
+            background-color: var(--bg-light-section-alt);
         }
 
 
@@ -244,7 +276,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 100px 40px 40px; 
+            padding: 120px 40px 60px; 
             text-align: center;
         }
         
@@ -257,8 +289,8 @@
             font-size: clamp(2.8rem, 9vw, 6rem); 
             font-weight: 800; 
             line-height: 1.1; 
-            margin-bottom: 25px;
-            color: var(--text-primary-light); 
+            margin-bottom: 30px; 
+            color: var(--text-dark-primary); 
         }
 
         .hero-title .line { display: block; overflow: hidden; }
@@ -274,22 +306,10 @@
         }
 
         .gradient-text-hero { 
-            /* Using solid color instead of gradient for better visibility */
             color: var(--accent-blue-primary); 
-            /* -webkit-background-clip: text;
-            -moz-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            -moz-text-fill-color: transparent;
-            background-size: 200% 100%;  */
-            /* animation: gradientShiftHeroLight 6s ease infinite alternate; */ /* Animation removed as it's a solid color now */
         }
-        /* @keyframes gradientShiftHeroLight { 
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        } */
         
-        .gradient-text { /* This class can still be used for other gradient texts if needed */
+        .gradient-text {
              background: linear-gradient(90deg, var(--accent-blue-primary), var(--accent-blue-secondary));
             -webkit-background-clip: text;
             -moz-background-clip: text;
@@ -300,16 +320,16 @@
 
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem); 
-            color: var(--text-secondary-light);
-            margin-bottom: 45px; 
+            font-size: clamp(1.15rem, 2.8vw, 1.5rem); 
+            color: var(--text-dark-secondary);
+            margin-bottom: 50px; 
             opacity: 0;
             transform: translateY(40px); 
             animation: fadeInUpLight 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; 
             max-width: 650px; 
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.65;
         }
         @keyframes fadeInUpLight { 
             from { opacity: 0; transform: translateY(var(--start-y, 40px)); } 
@@ -320,9 +340,9 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 32px; 
+            padding: 15px 35px; 
             background: var(--accent-blue-primary);
-            color: var(--text-on-accent);
+            color: var(--text-on-accent-light);
             text-decoration: none;
             border: none;
             border-radius: 8px; 
@@ -352,7 +372,7 @@
             transform: translateX(-50%);
             opacity: 0;
             animation: fadeInUpLight 1s ease-out 2s forwards; 
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             font-size: 0.8rem;
             display: flex;
             flex-direction: column;
@@ -363,7 +383,7 @@
             display: inline-block;
             width: 1.5px; 
             height: 25px; 
-            background: var(--text-secondary-light);
+            background: var(--text-dark-secondary);
             animation: scrollPulseLight 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1); 
         }
         @keyframes scrollPulseLight {
@@ -373,13 +393,17 @@
 
 
         /* Sections Base */
+        main { 
+            display: block; 
+        }
+
         section {
             padding: 100px 40px; 
             position: relative;
             overflow: hidden; 
         }
         section:nth-of-type(even) { 
-            background-color: var(--bg-light-section-alt);
+            background-color: var(--bg-light-section-alt); 
         }
 
 
@@ -406,12 +430,12 @@
             font-weight: 700; 
             line-height: 1.25;
             margin-bottom: 15px;
-            color: var(--text-primary-light);
+            color: var(--text-dark-primary);
         }
 
         .section-subtitle {
             font-size: clamp(1rem, 2.1vw, 1.2rem); 
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             max-width: 700px; 
             margin: 0 auto;
             line-height: 1.65;
@@ -429,7 +453,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
-            max-width: 1000px;
+            max-width: 1000px; 
             margin: 0 auto;
         }
         .counter-item {
@@ -446,13 +470,13 @@
             display: block;
             font-size: clamp(2.8rem, 7vw, 4.2rem); 
             font-weight: 700;
-            color: var(--accent-blue-primary); /* Changed to primary for consistency */
-            margin-bottom: 5px;
-            line-height: 1.1;
+            color: var(--accent-blue-primary); 
+            margin-bottom: 8px;
+            line-height: 1;
         }
         .counter-label {
             font-size: 0.9rem;
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -467,12 +491,12 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 25px; 
-            max-width: 1200px; 
+            max-width: 1000px; 
             margin: 0 auto;
         }
 
         .feature-card {
-            background: var(--bg-light-card);
+            background: var(--bg-light-secondary);
             border: 1px solid var(--border-light); 
             border-radius: 10px; 
             padding: 25px; 
@@ -480,7 +504,7 @@
             position: relative;
             opacity: 0;
             transform: translateY(40px); 
-            box-shadow: 0 4px 12px var(--shadow-light-soft); 
+            box-shadow: 0 4px 12px var(--shadow-soft); 
             overflow: hidden; 
         }
         .feature-card.visible {
@@ -513,10 +537,10 @@
             font-size: 1.15rem; 
             font-weight: 600;
             margin-bottom: 10px; 
-            color: var(--text-primary-light);
+            color: var(--text-dark-primary);
         }
         .feature-description {
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             font-size: 0.9rem;
             line-height: 1.6;
         }
@@ -525,6 +549,10 @@
         .products { 
             position: relative; 
             padding-bottom: 0; 
+        }
+        .product-showcase {
+            max-width: 1000px; 
+            margin: 0 auto;
         }
 
         .product-group { 
@@ -538,257 +566,127 @@
             transform: translateY(0);
         }
         
-        .product-introduction-block {
-            display: grid;
-            grid-template-columns: 1fr; 
-            gap: 30px;
-            align-items: center;
-            margin-bottom: 50px;
-            padding: 30px;
-            background: var(--bg-light-card);
+        .product-introduction-block { 
+            margin-bottom: 40px; 
+            padding: 20px;
+            background: var(--bg-light-secondary);
             border-radius: 12px;
-            box-shadow: 0 8px 25px var(--shadow-light-soft);
+            box-shadow: 0 6px 20px var(--shadow-soft);
+            text-align: left; 
         }
-        @media (min-width: 768px) { 
-            .product-introduction-block {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-            .product-introduction-block.align-image-right .product-intro-gallery-wrapper {
-                order: 2;
-            }
-            .product-introduction-block.align-image-right .product-intro-content {
-                order: 1;
-            }
-        }
-
+       
         .product-intro-content .product-title {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
             color: var(--accent-blue-primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 700;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .product-intro-content .product-subtitle {
             font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: var(--text-secondary-light);
-            margin-bottom: 15px;
+            color: var(--text-dark-secondary);
+            margin-bottom: 18px;
             font-weight: 500;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         .product-intro-content .product-description {
             font-size: 1rem;
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             line-height: 1.7;
             margin-bottom: 25px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
-
-        .product-intro-gallery-wrapper {
-        }
-
-        .product-main-image-display { 
-            width: 100%;
-            height: 350px; 
-            margin-bottom: 15px;
-            border-radius: 8px; 
-            overflow: hidden;
-            background: var(--bg-light-section-alt); 
-            position: relative; 
-            border: 1px solid var(--border-light);
-        }
-        .main-image-active { 
-            width: 100%;
-            height: 100%;
-            object-fit: contain; 
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
-            border-radius: 8px; 
-            transform: scale(1);
-            opacity: 1; 
-        }
-        .product-main-image-display:hover .main-image-active {
-             transform: scale(1.03); 
-        }
-        .main-image-active.image-swapping { 
-            opacity: 0;
-            transform: scale(0.97); 
-        }
-
-        .product-thumbnail-selector { 
-            display: flex; 
-            justify-content: center; 
-            gap: 10px; 
-            overflow-x: auto; 
-            padding: 5px 0; 
-            white-space: nowrap; 
-        }
-        .product-thumbnail-selector::-webkit-scrollbar { height: 6px; }
-        .product-thumbnail-selector::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); border-radius: 3px;}
-        .product-thumbnail-selector::-webkit-scrollbar-thumb { background: var(--accent-blue-secondary); border-radius: 3px;}
-        .product-thumbnail-selector::-webkit-scrollbar-thumb:hover { background: var(--accent-blue-primary); }
-
-        .thumbnail { 
-            width: 80px; 
-            height: 60px; 
-            object-fit: cover;
-            border-radius: 5px; 
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: border-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
-            opacity: 0.7; 
-        }
-        .thumbnail:hover {
-            opacity: 1;
-            transform: scale(1.08); 
-            border-color: var(--accent-blue-secondary);
-        }
-        .thumbnail.active {
-            border-color: var(--accent-blue-primary);
-            opacity: 1;
-            transform: scale(1.1); 
-            box-shadow: 0 0 8px rgba(var(--accent-blue-primary-rgb), 0.5);
-        }
-
+        
         .product-variants-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 40px; 
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+            gap: 20px; 
         }
+         @media (min-width: 600px) { 
+            .product-variants-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+         @media (min-width: 769px) { 
+            .product-variants-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+         }
+
 
         .product-variant-block {
-            background: var(--bg-light-card);
+            background: var(--bg-light-secondary); 
             border: 1px solid var(--border-light);
             border-radius: 10px;
             padding: 20px;
-            text-align: center;
-            box-shadow: 0 3px 10px var(--shadow-light-soft);
+            text-align: left; 
+            box-shadow: 0 4px 15px var(--shadow-soft);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; 
+            flex-direction: column; 
         }
         .product-variant-block:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px var(--shadow-light-medium);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 10px 25px var(--shadow-medium);
         }
         .product-variant-block img {
             width: 100%;
-            height: 180px;
-            object-fit: contain;
+            height: 160px; 
+            object-fit: cover; 
             border-radius: 6px;
             margin-bottom: 15px;
             background-color: var(--bg-light-section-alt); 
         }
         .product-variant-block h4 { 
-            font-size: 1.1rem;
-            color: var(--text-primary-light);
+            font-size: 1.05rem;
+            color: var(--text-dark-primary);
             margin-bottom: 8px;
             font-weight: 600;
+            word-break: break-word; 
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
         }
         .product-variant-block p { 
-            font-size: 0.85rem;
-            color: var(--text-secondary-light);
+            font-size: 0.88rem; 
+            color: var(--text-dark-secondary);
             line-height: 1.6;
+            word-break: break-word; 
+            overflow-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+            flex-grow: 1; 
         }
         
-        .product-details-area { 
-        }
-
-        .product-features { list-style: none; margin-bottom: 20px; } 
-        .product-features li {
-            color: var(--text-secondary-light);
-            margin-bottom: 10px;
-            padding-left: 22px;
-            position: relative;
-            transition: color 0.3s ease, transform 0.3s ease;
-            font-size: 0.9rem;
-            word-break: break-word; 
-            overflow-wrap: break-word;
-        }
-        .product-features li::before {
-            content: '›'; 
-            position: absolute;
-            left: 0;
-            top: 1px; 
-            color: var(--accent-blue-primary);
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        .product-features li strong { color: var(--text-primary-light); font-weight: 500; }
-        .product-features li:hover { color: var(--accent-blue-primary); transform: translateX(5px); } 
-        .product-features li:hover::before { color: var(--accent-blue-secondary); }
-        .product-features li:hover strong { color: var(--accent-blue-primary); }
-
-
-        .product-specs-container { 
-            margin-top: auto; 
-        }
-
-        .product-specs { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 25px; } 
-        @media (min-width: 600px) { 
-            .product-specs { grid-template-columns: 1fr 1fr; }
-        }
-
-
-        .spec-box {
-            background: rgba(0,0,0, 0.02); 
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 15px;
-            transition: background 0.3s ease, border-color 0.3s ease;
-        }
-        .spec-box:hover {
-            background: rgba(0,0,0, 0.03); 
-            border-color: var(--accent-blue-primary);
-        }
-        .spec-title {
-            font-size: 0.7rem;
-            color: var(--accent-blue-primary);
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        .spec-list { list-style: none; }
-        .spec-list li { 
-            color: var(--text-primary-light); 
-            margin-bottom: 5px; 
-            font-size: 0.85rem; 
-            word-break: break-word; 
-            overflow-wrap: break-word;
-        }
-        .spec-list li::before { content: "▪"; color: var(--accent-blue-primary); margin-right: 6px; }
-
-
-        .product-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent-blue-primary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease, gap 0.3s ease;
-            margin-top: 20px; 
-        }
-        .product-cta:hover { color: var(--accent-blue-secondary); gap: 12px; }
-        .product-cta::after { content: '→'; transition: transform 0.3s ease; font-size: 1.1em; }
-        .product-cta:hover::after { transform: translateX(3px); }
-
         /* Contact Section */
         .contact {
             background: var(--bg-light-section-alt); 
             text-align: center;
             padding-top: 90px; 
-            padding-left: 40px; 
-            padding-right: 40px; 
+            padding-left: 0; 
+            padding-right: 0; 
             padding-bottom: 60px; 
         }
       
         .map-container-constrained { 
-            max-width: 900px; 
+            max-width: 100%; 
             margin: 0 auto 40px auto; 
             overflow: hidden;
-            padding-bottom: 50%; 
-            position: relative;
-            height: 0;
-            border-radius: 8px; 
-            border: 1px solid var(--border-light);
+            height: 350px; 
+            max-height: 50vh; 
+            border-radius: 0; 
+            border: none; 
         }
 
         .map-container-constrained iframe {
@@ -798,10 +696,11 @@
             width: 100%;
             position: absolute;
             border: 0;
+            filter: grayscale(100%); 
         }
 
         .contact-details-text-container {
-            max-width: 750px; 
+            max-width: 720px; 
             margin: 0 auto; 
             padding: 0 20px; 
             text-align: center; 
@@ -809,7 +708,7 @@
 
         .contact-details-text-container h3 {
             font-size: 1.8rem;
-            color: var(--text-primary-light);
+            color: var(--text-dark-primary);
             margin-bottom: 20px;
             font-weight: 600;
         }
@@ -823,12 +722,12 @@
 
         .contact-details-text-container p {
             font-size: 1rem;
-            color: var(--text-secondary-light);
+            color: var(--text-dark-secondary);
             line-height: 1.8;
             margin-bottom: 8px;
         }
         .contact-details-text-container p strong {
-            color: var(--text-primary-light);
+            color: var(--text-dark-primary);
             font-weight: 500;
         }
          .contact-details-text-container a {
@@ -849,19 +748,33 @@
             text-align: center;
             border-top: 1px solid var(--border-light);
         }
-        footer p { color: var(--text-secondary-light); font-size: 0.8rem; }
+        footer p { color: var(--text-dark-secondary); font-size: 0.8rem; }
 
         /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-links { display: none; }
-            #mobile-menu-toggle { display: block; } 
+            #mobile-menu-toggle { display: block; order: 2; /* Hamburger on the right */ } 
+            
+            .nav-container { 
+                justify-content: space-between; 
+                padding: 0 20px; 
+                max-width: 100%; 
+                flex-direction: row; 
+            } 
             .logo { 
-                left: 20px; 
+                position: static; 
+                transform: none; 
+                margin-right: auto; 
+                left:0; 
+                text-align: left;
+                order: 1; /* Logo on the left */
             }
-            .nav-container { justify-content: space-between; padding: 0 20px; } 
-            .logo { position: static; transform: none; margin-right: auto; }
-            #mobile-menu-toggle { position: static; transform: none; }
+            /* #mobile-menu-toggle { 
+                position: static; 
+                transform: none; 
+                margin-left: auto; 
+            } */
 
 
             .hero { padding: 80px 20px 30px; }
@@ -869,20 +782,22 @@
             .hero-subtitle { font-size: clamp(1rem, 3.5vw, 1.2rem); }
 
             .product-introduction-block { 
-                grid-template-columns: 1fr; 
                 padding: 20px; 
             }
-            .product-intro-gallery-wrapper { 
-                order: -1; 
-                margin-bottom: 25px;
-            }
-            .product-main-image-display { height: 280px; } /* Adjusted for mobile */
+           
+            .product-main-image-display { height: 280px; } 
             .product-thumbnail-selector { justify-content: flex-start; } 
             .thumbnail { width: 70px; height: 50px; }
 
-            .product-variants-grid { grid-template-columns: 1fr; gap: 20px; }
-            .product-variant-block { padding: 15px; }
-            .product-variant-block img { height: 150px; }
+            .product-variants-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px; 
+            }
+             @media (min-width: 500px) and (max-width: 768px) { 
+                .product-variants-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
 
 
             .product-entry { 
@@ -890,40 +805,68 @@
                 margin-bottom: 60px; 
             }
             .product-header-area .product-title { 
-                font-size: clamp(1.4rem, 4.8vw, 1.9rem); 
+                font-size: clamp(1.3rem, 4.5vw, 1.7rem); 
                 word-break: break-word; 
                 overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
-            .product-header-area .product-subtitle { font-size: clamp(1rem, 3vw, 1.1rem); }
-            .product-header-area .product-description { 
-                font-size: 0.9rem; 
+            .product-header-area .product-subtitle { 
+                font-size: clamp(0.9rem, 3vw, 1rem); 
                 word-break: break-word; 
                 overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+            }
+            .product-header-area .product-description { 
+                font-size: 0.85rem; 
+                word-break: break-word; 
+                overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
             
             .product-details-area { grid-template-columns: 1fr; } 
             .product-features li, .spec-list li {
                  word-break: break-word; 
                  overflow-wrap: break-word;
+                 -webkit-hyphens: auto;
+                 -ms-hyphens: auto;
+                 hyphens: auto;
+            }
+            .product-variant-block h4, .product-variant-block p {
+                word-break: break-word; 
+                overflow-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
             }
 
 
             .features-grid { grid-template-columns: 1fr; }
             section { padding: 70px 20px; } 
-            .contact { padding-left: 20px; padding-right: 20px; } 
+            .contact { padding-left: 0; padding-right: 0; } 
             .section-title { font-size: clamp(1.8rem, 5vw, 2.8rem); }
             .section-subtitle { font-size: clamp(0.9rem, 3vw, 1.1rem); }
             
-            .map-container-constrained { height: 300px; max-height: 50vh; margin-bottom: 30px; padding-bottom: 56.25%; }
+            .map-container-constrained { 
+                height: 300px; 
+                max-height: 40vh; 
+                margin-bottom: 30px; 
+            }
+            .contact-details-text-container { padding: 0 20px; }
             .contact-details-text-container h3 { font-size: 1.5rem; }
             .contact-details-text-container h4 { font-size: 1.2rem; }
             .contact-details-text-container p { font-size: 0.9rem; }
         }
 
         html { scroll-behavior: smooth; }
-        ::selection { background: var(--accent-blue-primary); color: var(--text-on-accent); }
+        ::selection { background: var(--accent-blue-primary); color: var(--text-on-accent-light); }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-light); } 
+        ::-webkit-scrollbar-track { background: var(--bg-light-primary); } 
         ::-webkit-scrollbar-thumb { background: var(--accent-blue-primary); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue-secondary); }
     </style>
@@ -931,11 +874,10 @@
 <body>
     <div class="bg-animation">
         <div class="grid-overlay"></div>
-    </div>
+        </div>
 
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">BONFATTI S.R.L.</a>
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#features">VANTAGGI</a></li>
@@ -943,7 +885,10 @@
                 <li><a href="#products">PRODOTTI</a></li>
                 <li><a href="#contact">CONTATTI</a></li>
             </ul>
-            <button id="mobile-menu-toggle" aria-label="Menu" aria-expanded="false">
+            <a href="#home" class="logo">
+                <span class="logo-main-text">BONFATTI S.R.L.</span>
+                </a>
+            <button id="mobile-menu-toggle" aria-label="Apri menu" aria-expanded="false">
                 <div class="hamburger-icon">
                     <span></span>
                     <span></span>
@@ -952,7 +897,7 @@
             </button>
         </div>
     </nav>
-    <div id="mobile-menu">
+    <div id="mobile-menu" aria-hidden="true">
         <ul>
             <li><a href="#home">HOME</a></li>
             <li><a href="#features">VANTAGGI</a></li>
@@ -962,7 +907,7 @@
         </ul>
     </div>
 
-
+<main>
     <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title">
@@ -1024,32 +969,26 @@
         </div>
         <div class="features-grid">
             <div class="feature-card" style="--index: 0;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Consegna Ultra-Rapida</h3>
                 <p class="feature-description">Sistema JUST IN TIME con consegna garantita in soli 5 giorni lavorativi. Massima efficienza per il tuo materiale.</p>
             </div>
             <div class="feature-card" style="--index: 1;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Personalizzazione Avanzata</h3>
                 <p class="feature-description">Dimensioni su misura, configurazione libera dell'azionamento e setup intuitivo tramite il nostro configuratore online.</p>
             </div>
             <div class="feature-card" style="--index: 2;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Qualità Certificata CE</h3>
                 <p class="feature-description">Nastri trasportatori certificati CE con documentazione completa. Eccellente rapporto qualità-prezzo e affidabilità.</p>
             </div>
             <div class="feature-card" style="--index: 3;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Progettazione Dedicata</h3>
                 <p class="feature-description">Il nostro ufficio tecnico realizza soluzioni custom, integrando prodotti modulari con le tue macchine per un successo garantito.</p>
             </div>
             <div class="feature-card" style="--index: 4;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Servizio Chiavi in Mano</h3>
                 <p class="feature-description">Fornitura completa di componenti elettrico-software, installazione e collaudo finale. Assicuriamo il risultato atteso.</p>
             </div>
             <div class="feature-card" style="--index: 5;">
-                <div class="feature-icon"></div>
                 <h3 class="feature-title">Innovazione Continua</h3>
                 <p class="feature-description">Soluzioni come il sistema FSC per cambio formato rapido, annullando i tempi di fermo per la regolazione manuale.</p>
             </div>
@@ -1064,7 +1003,7 @@
         </div>
         
         <div class="product-showcase">
-            <div class="product-group">
+            <article class="product-group">
                 <div class="product-introduction-block">
                     <div class="product-intro-content">
                         <h3 class="product-title">IL TRASPORTO MODULARE</h3>
@@ -1074,41 +1013,43 @@
                         </p>
                          <a href="#" class="product-cta interactive-sound">Scopri di più sul Trasporto Modulare</a>
                     </div>
-                    <div class="product-intro-gallery-wrapper">
-                        <div class="product-gallery-area">
-                            <div class="product-main-image-display">
-                                <img src="modulare01.jpg" alt="Trasporto Modulare Bonfatti - Vista Principale" id="mainImageProduct1" class="main-image-active" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e9edf0/212529?text=Trasporto+Modulare';">
-                            </div>
-                            <div class="product-thumbnail-selector">
-                                <img src="modulare01.jpg" alt="Miniatura Trasporto Modulare 1" class="thumbnail active" data-target="#mainImageProduct1" data-src="modulare01.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M1';">
-                                <img src="modulare02.jpg" alt="Miniatura Trasporto Modulare 2" class="thumbnail" data-target="#mainImageProduct1" data-src="modulare02.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M2';">
-                                <img src="modulare03.jpg" alt="Miniatura Trasporto Modulare 3" class="thumbnail" data-target="#mainImageProduct1" data-src="modulare03.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M3';">
-                                <img src="https://placehold.co/100x75/e9edf0/212529?text=M4" alt="Miniatura Trasporto Modulare 4" class="thumbnail" data-target="#mainImageProduct1" data-src="https://placehold.co/800x450/e9edf0/212529?text=Vista+4+Modulare" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=M4';">
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="product-variants-grid">
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+Rettilinei" alt="Variante Trasportatori Rettilinei" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/modulare01.jpg" alt="Variante Trasportatori Rettilinei" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+1.1';">
                         <h4>Trasportatori Rettilinei</h4>
                         <p>Alta capacità di carico con movimento lineare continuo, ideali per flussi produttivi intensi.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+Curvilinei" alt="Variante Trasportatori Curvilinei" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/modulare02.jpg" alt="Variante Trasportatori Curvilinei" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+1.2';">
                         <h4>Trasportatori Curvilinei</h4>
                         <p>Perfetti per layout complessi, gestiscono curve e angolazioni con fluidità ed efficienza.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+Scatole" alt="Variante Trasportatori per Scatole" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/modulare03.jpg" alt="Variante Trasportatori per Scatole" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+1.3';">
                         <h4>Trasportatori per Scatole</h4>
                         <p>Sistema table top con guide di contenimento integrate, ottimizzato per la movimentazione di imballaggi.</p>
                     </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+1.4" alt="Variante Prodotto Modulare 1.4" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Trasportatori Gommati</h4>
+                        <p>Ideali per movimenti in salita e discesa, garantendo aderenza e stabilità del prodotto.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+1.5" alt="Variante Prodotto Modulare 1.5" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Trasportatori Alta Velocità</h4>
+                        <p>Progettati per linee di produzione ad alta intensità, ottimizzando i tempi ciclo.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+1.6" alt="Variante Prodotto Modulare 1.6" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Trasportatori per Pallet</h4>
+                        <p>Soluzioni robuste e affidabili per la movimentazione efficiente di carichi pesanti e palletizzati.</p>
+                    </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-group">
-                <div class="product-introduction-block align-image-right">
+            <article class="product-group">
+                <div class="product-introduction-block product-introduction-block--align-image-right">
                      <div class="product-intro-content">
                         <h3 class="product-title">FAST SIZE CHANGE (FSC)</h3>
                         <p class="product-subtitle">Automazione e Velocità nel Cambio Formato</p>
@@ -1117,40 +1058,27 @@
                         </p>
                          <a href="#" class="product-cta interactive-sound">Dettagli Sistema FSC</a>
                     </div>
-                    <div class="product-intro-gallery-wrapper">
-                        <div class="product-gallery-area">
-                            <div class="product-main-image-display">
-                                 <img src="Fsc01.jpg" alt="Attuatore FSC Bonfatti - Vista Principale" id="mainImageProduct2" class="main-image-active" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e9edf0/212529?text=Immagine+Principale+FSC';">
-                            </div>
-                            <div class="product-thumbnail-selector">
-                                <img src="Fsc01.jpg" alt="Miniatura FSC 1" class="thumbnail active" data-target="#mainImageProduct2" data-src="Fsc01.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC1';">
-                                <img src="Fsc02.jpg" alt="Miniatura FSC 2" class="thumbnail" data-target="#mainImageProduct2" data-src="Fsc02.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC2';">
-                                <img src="Fsc03.jpg" alt="Miniatura FSC 3" class="thumbnail" data-target="#mainImageProduct2" data-src="Fsc03.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC3';">
-                                <img src="https://placehold.co/100x75/e9edf0/212529?text=FSC4" alt="Miniatura FSC 4" class="thumbnail" data-target="#mainImageProduct2" data-src="https://placehold.co/800x450/e9edf0/212529?text=Vista+4+FSC" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=FSC4';">
-                            </div>
-                        </div>
-                    </div>
                 </div>
                  <div class="product-variants-grid">
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=FSC+Servomotore" alt="Variante FSC con Servomotore" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/Fsc01.jpg" alt="Variante FSC con Servomotore" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.1';">
                         <h4>Automazione con Servomotore</h4>
                         <p>Massima precisione e velocità nel cambio formato grazie al controllo servoassistito.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=FSC+Manuale" alt="Variante FSC Comando Manuale" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/Fsc02.jpg" alt="Variante FSC Comando Manuale" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.2';">
                         <h4>Comando Manuale Intuitivo</h4>
                         <p>Soluzione efficace per una gestione semplificata del cambio formato da parte dell'operatore.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=FSC+Integrazione" alt="Integrazione FSC su Linee Esistenti" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/Fsc03.jpg" alt="Integrazione FSC su Linee Esistenti" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+2.3';">
                         <h4>Integrazione Flessibile</h4>
                         <p>Il sistema FSC si adatta facilmente a impianti esistenti, ottimizzando linee di confezionamento multiformato.</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="product-group">
+            <article class="product-group">
                 <div class="product-introduction-block">
                     <div class="product-intro-content">
                         <h3 class="product-title">NASTRI TRASPORTATORI MODULARI IN ACCIAIO INOX JUST IN TIME</h3>
@@ -1160,38 +1088,50 @@
                         </p>
                          <a href="#" class="product-cta interactive-sound">Configura il Tuo Nastro JIT</a>
                     </div>
-                     <div class="product-intro-gallery-wrapper">
-                        <div class="product-gallery-area">
-                            <div class="product-main-image-display">
-                                <img src="jit01.jpg" alt="Nastri JIT Bonfatti - Vista Principale" id="mainImageProduct3" class="main-image-active" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e9edf0/212529?text=Immagine+Principale+JIT';">
-                            </div>
-                            <div class="product-thumbnail-selector">
-                                <img src="jit01.jpg" alt="Miniatura Nastri JIT 1" class="thumbnail active" data-target="#mainImageProduct3" data-src="jit01.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT1';">
-                                <img src="jit02.jpg" alt="Miniatura Nastri JIT 2" class="thumbnail" data-target="#mainImageProduct3" data-src="jit02.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT2';">
-                                <img src="jit03.jpg" alt="Miniatura Nastri JIT 3" class="thumbnail" data-target="#mainImageProduct3" data-src="jit03.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT3';">
-                                <img src="https://placehold.co/100x75/e9edf0/212529?text=JIT4" alt="Miniatura Nastri JIT 4" class="thumbnail" data-target="#mainImageProduct3" data-src="https://placehold.co/800x450/e9edf0/212529?text=Vista+4+JIT" onerror="this.onerror=null;this.src='https://placehold.co/100x75/e9edf0/212529?text=JIT4';">
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                 <div class="product-variants-grid">
+                 <div class="product-variants-grid grid-for-8"> 
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Nastro+a+Tappeto+JIT" alt="Variante Nastro a Tappeto JIT" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/jit01.jpg" alt="Variante Nastro a Tappeto JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+3.1';">
                         <h4>Nastri a Tappeto JIT</h4>
                         <p>Soluzioni versatili e rapide per il trasporto di una vasta gamma di prodotti.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Catena+Modulare+JIT" alt="Variante Catena Modulare JIT" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <img src="images/jit02.jpg" alt="Variante Catena Modulare JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+3.2';">
                         <h4>Catene Modulari JIT</h4>
                         <p>Robustezza e flessibilità per applicazioni specifiche, consegnate in tempi record.</p>
                     </div>
                     <div class="product-variant-block">
-                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Rulliere+JIT" alt="Variante Rulliere JIT" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
-                        <h4>Rulliere Motorizzate e a Gravità JIT</h4>
+                        <img src="images/jit03.jpg" alt="Variante Rulliere JIT" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante+3.3';">
+                        <h4>Rulliere Motorizzate JIT</h4>
                         <p>Sistemi di trasporto a rulli efficienti e pronti all'uso in soli 5 giorni.</p>
                     </div>
+                     <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+3.4" alt="Variante Prodotto JIT 3.4" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Configuratore Online</h4>
+                        <p>Personalizza il tuo nastro in pochi click e ricevi un preventivo immediato.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+3.5" alt="Variante Prodotto JIT 3.5" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Acciaio Inox AISI 304</h4>
+                        <p>Materiali di alta qualità per durabilità e igiene, ideali per settore alimentare e farmaceutico.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+3.6" alt="Variante Prodotto JIT 3.6" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Kit Pronti all'Assemblaggio</h4>
+                        <p>Facilità di installazione grazie ai kit preassemblati e istruzioni chiare.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+3.7" alt="Variante Prodotto JIT 3.7" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Rulliere a Gravità JIT</h4>
+                        <p>Soluzione economica ed efficiente per il trasporto non motorizzato.</p>
+                    </div>
+                    <div class="product-variant-block">
+                        <img src="https://placehold.co/400x300/e9edf0/212529?text=Variante+3.8" alt="Variante Prodotto JIT 3.8" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e9edf0/212529?text=Variante';">
+                        <h4>Accessori Modulari</h4>
+                        <p>Vasta gamma di accessori per personalizzare ulteriormente il tuo sistema JIT.</p>
+                    </div>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -1221,33 +1161,13 @@
             <p>08:30 – 18:00</p>
         </div>
     </section>
-
+</main>
     <footer>
         <p>© 2024 Bonfatti S.r.l. | Tutti i diritti riservati | P.IVA 03676200367</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-
-            const particlesContainer = document.querySelector('.particles');
-            if (particlesContainer) {
-                const particleColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-blue-primary').trim() || '#007bff';
-                for (let i = 0; i < 25; i++) { 
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.background = particleColor;
-                    const randomOpacity = (Math.random() * 0.05 + 0.02).toFixed(2); 
-                    particle.style.opacity = randomOpacity;
-                    particle.style.setProperty('--particle-opacity', randomOpacity);
-                    particle.style.animationDelay = Math.random() * 25 + 's';
-                    particle.style.animationDuration = (20 + Math.random() * 15) + 's'; 
-                    const randomSize = (Math.random() * 1.5 + 0.5) + 'px'; 
-                    particle.style.width = randomSize;
-                    particle.style.height = randomSize;
-                    particlesContainer.appendChild(particle);
-                }
-            }
 
             const navElement = document.querySelector('nav');
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -1261,9 +1181,10 @@
 
             if (mobileMenuToggle && mobileMenu) {
                 mobileMenuToggle.addEventListener('click', () => {
+                    const isOpening = !mobileMenu.classList.contains('open');
                     mobileMenu.classList.toggle('open');
-                    const isExpanded = mobileMenu.classList.contains('open');
-                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                    mobileMenuToggle.setAttribute('aria-expanded', isOpening);
+                    mobileMenuToggle.setAttribute('aria-label', isOpening ? 'Chiudi menu' : 'Apri menu');
                     mobileMenuToggle.classList.toggle('active');
                     document.body.classList.toggle('menu-open');
                 });
@@ -1273,6 +1194,7 @@
                         mobileMenu.classList.remove('open');
                         mobileMenuToggle.classList.remove('active');
                         mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        mobileMenuToggle.setAttribute('aria-label', 'Apri menu');
                         document.body.classList.remove('menu-open');
                     });
                 });
@@ -1304,15 +1226,8 @@
                             const isEven = index % 2 === 0; 
                             
                             if (window.innerWidth > 768) {
-                               if (entry.target.querySelector('.product-introduction-block.align-image-right') && !isEven) { 
-                                   entry.target.classList.add('slide-right');
-                               } else if (!entry.target.querySelector('.product-introduction-block.align-image-right') && isEven) { 
-                                    entry.target.classList.add('slide-left');
-                               } else if (entry.target.querySelector('.product-introduction-block.align-image-right') && isEven) {
-                                    entry.target.classList.add('slide-left'); 
-                               } else {
-                                    entry.target.classList.add('slide-right'); 
-                               }
+                               // No alternating slide for this layout
+                               entry.target.classList.add('slide-left');
                             } else { 
                                 entry.target.classList.add('slide-left');
                             }
@@ -1331,7 +1246,7 @@
             const animateCounter = (element) => {
                 const target = +element.dataset.target;
                 if (isNaN(target)) {
-                    element.textContent = element.dataset.target || 'N/A';
+                    element.textContent = element.dataset.target || 'N/A'; 
                     return;
                 }
                 element.textContent = '0'; 
@@ -1353,33 +1268,7 @@
                 requestAnimationFrame(step);
             };
             
-            document.querySelectorAll('.product-thumbnail-selector .thumbnail').forEach(thumbnail => {
-                thumbnail.addEventListener('click', function() {
-                    const targetMainImageSelector = this.dataset.target;
-                    const newImageSrc = this.dataset.src;
-                    const mainImageElement = document.querySelector(targetMainImageSelector);
-
-                    if (mainImageElement && mainImageElement.getAttribute('src') !== newImageSrc) {
-                        mainImageElement.classList.add('image-swapping');
-
-                        this.closest('.product-thumbnail-selector').querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-                        this.classList.add('active');
-
-                        setTimeout(() => {
-                            mainImageElement.src = newImageSrc;
-                            mainImageElement.onerror = function() { 
-                                this.onerror=null;
-                                this.src='https://placehold.co/800x450/e9edf0/212529?text=Immagine+non+caricata';
-                            };
-                            setTimeout(() => mainImageElement.classList.remove('image-swapping'), 50); 
-                        }, 200); 
-                    } else if (mainImageElement && mainImageElement.getAttribute('src') === newImageSrc && !this.classList.contains('active')) {
-                         this.closest('.product-thumbnail-selector').querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
-                         this.classList.add('active');
-                    }
-                });
-            });
-
+            // Image gallery script removed as per new design
 
             let audioCtx;
             let hoverSound;
@@ -1391,14 +1280,14 @@
                     document.querySelectorAll('.interactive-sound').forEach(el => {
                         el.addEventListener('mouseenter', () => {
                             if (audioCtx && audioCtx.state === 'suspended') {
-                                audioCtx.resume().catch(e => {});
+                                audioCtx.resume().catch(e => {console.warn("AudioContext resume failed:", e);});
                             }
                             hoverSound.currentTime = 0; 
-                            hoverSound.play().catch(e => {});
+                            hoverSound.play().catch(e => {console.warn("Audio play failed:", e);});
                         });
                     });
                 }
-            } catch(e) { console.warn("Audio API/sound init failed."); }
+            } catch(e) { console.warn("Audio API/sound init failed:", e); }
             
             console.log('%c BONFATTI S.R.L. ', 'background: linear-gradient(135deg, #007bff, #00b8d4); color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 5px; border: 1px solid rgba(0,0,0,0.1);');
             console.log('%c ::: Soluzioni di Trasporto Modulare ::: ', 'color: #007bff; font-size: 12px; font-style: italic;');
